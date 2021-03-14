@@ -24,7 +24,9 @@ The jacks are rather small parts, so the most important issue is first layer adh
 
 ### <a name="gluing-instructions"></a>Gluing Instructions
 
-- The recommended way of gluing OpenVLex jacks to your tiles is to use one of the [gluing stencils](../gluing_stencils/README.md). However, to just try out and test OpenVLex you do not need a stencil yet, just use an already printed base as a stencil.
+- The recommended way of gluing OpenVLex jacks to your tiles is to use one of the [gluing stencils](../gluing_stencils/README.md). However, to just try out and test OpenVLex you do not need a stencil yet, just use an already printed base as a stencil.  
+   ![img001](../img/img002.jpg)
+
 - Align the jacks of one tile to all have the same direction. This makes later unplugging easier.
 - For wall tiles and non-square floor tiles (like 2x1) the recommended orientation of the jacks is to align the jack's "slot" with the wall direction or the longer tile side, respectively. Its much easier then to unplug the tile by slightly wobbling it.
 - Use either
