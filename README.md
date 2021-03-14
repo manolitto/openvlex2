@@ -40,7 +40,8 @@ To give you an idea of how OpenVLex works and to give you a better feeling of it
    ![img001](img/img001.jpg)
 3. Download [latest release](https://github.com/manolitto/openvlex2/releases) of OpenVLex 2 if not yet done.
 4. Print fourteen **OpenVLex jacks**. See [jack printing details and hints](jacks/README.md).  
-   (Printing time < 40 mins)
+   (Printing time < 40 mins)  
+   ![img001](img/img013.jpg)
 5. Glue the jacks to the floor parts. See [jack gluing instructions](jacks/README.md).  
    (Note: You need only thirteen jacks, one is a spare)  
    ![img001](img/img002.jpg)
