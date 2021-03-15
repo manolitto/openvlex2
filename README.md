@@ -57,30 +57,30 @@ You can find the latest release [here](https://github.com/manolitto/openvlex2/re
 To give you an idea of how OpenVLex works and the advantages it offers, you can follow this guide:
 
 1. Choose your favourite OpenForge 2.0 floor terrain set.  
-   (If you are unsure, start with Devon Jones' well-known [OpenForge 2.0 Dungeon Stone Floor](https://www.thingiverse.com/thing:2740273))
+   > If you are unsure, start with Devon Jones' well-known [OpenForge 2.0 Dungeon Stone Floor](https://www.thingiverse.com/thing:2740273))
 
 2. Print **one** 1x1, **one** 2x2 and **four** 2x1 inch based (Dungeon Stone) floor parts.  
    Print only the decor parts without the OpenForge 2.0 bases!  
-   (Expect a printing time of ~3 hours at medium quality on a FFF printer)  
+   > Expect a printing time of ~3 hours at medium quality on a FFF printer
    
    ![Floor tiles](img/img001.jpg)
 
 3. Download [the latest version](https://github.com/manolitto/openvlex2/releases) of OpenVLex 2 if you haven't already done so.
 
 4. Print fourteen **[OpenVLex jacks](jacks/)**. See [jack printing details and hints](jacks/README.md).  
-   (Printing time < 40 mins)  
+   > Printing time < 40 mins
    
    ![OpenVLex jacks](img/img013.jpg)
 
 5. Glue the jacks to the floor parts. See [jack gluing instructions](jacks/README.md#gluing-instructions).  
-   (Note: You only need thirteen jacks, one is a spare)  
+   > **Note:** You only need thirteen jacks, one is a spare
    
    ![Glue jacks to floor parts](img/img002.jpg)  
    ![Finished floor parts](img/img003.jpg)
 
 6. Print out some **[OpenVLex Triplex bases](bases/triplex.openvlex/)** in the sizes you want. For now, print only one of each of your preferred sizes from the following list: 1x1, 2x1, 2x2, 3x2, 3x3, 4x1, 4x2, 4x3, 5x1, 5x2, 6x1, 6x2, 7x1, 8x1.  
    See [printing instructions for bases](bases/README.md).  
-   (Printing times: 1x1 = ~20 mins, 2x2 = ~1 hour, 7x1 = ~2 hours)  
+   > Printing times: 1x1 = ~20 mins, 2x2 = ~1 hour, 7x1 = ~2 hours
    
    ![OpenVLex Triplex bases](img/img004.jpg)
 
@@ -126,12 +126,19 @@ If you are either not yet convinced or already eager to learn more about the pos
 ## FAQs
 
 **Question:** OpenForge walls and corners from the construction sets are normally glued to the base together with matching floor parts. How does this work with OpenVLex jacks?  
+
 **Answer:** Print them together as one piece! Just put the pieces you want to combine together in your slicer. In Slic3r/PrusaSlicer/SuperSlicer it's pretty easy. I assume it is also possible in Cura, but I have never tried it.
 
+---
+
 **Q:** Sometimes larger floor tiles are difficult to detach and remove from the base. Any tips?  
+
 **A:** If using your fingernails :nail_care: is not an option :grimacing:, use flat-nose pliers to press the jacks together from the underside and carefully push them through. Or use a flat screwdriver to carefully and gradually spread the two parts apart from all four sides.
 
+---
+
 **Q:** The jacks look fragile and I am sure I will manage to break one. I don't want to throw away painted tiles because of a broken jack!  
+
 **A:** Rest assured that you don't have to! Simply remove the broken jack with pliers and a carpet knife (:warning: Watch your fingers! :face_with_head_bandage:). To be on the safe side, you might consider using a less strong plastic glue instead of superglue. However, I myself use cheap superglue and have been able to successfully remove the jacks completely several times.
 
 
