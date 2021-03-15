@@ -1,8 +1,8 @@
 # OpenVLex 2
 
-_OpenVLex is a **V**ertical tile-to-base **L**ocking system for 3D printed terrain._
+_OpenVLex is a **V**ertical decor-to-base **L**ocking system for 3D printed terrain._
 
-OpenVLex makes it possible to print and use base and terrain parts in a more **flexible** way by providing a special vertical locking mechanism while still adhering to the widely used, well established tile locking systems. You can use the same terrain part with bases of different sizes or locking standards. Think of OpenForge 2.0 but instead of gluing, you clip your terrain parts to the base.  
+OpenVLex makes it possible to print and use base and terrain parts in a more **flexible** way by providing a special vertical locking mechanism while still adhering to the widely used, well established tile locking systems. You can use the same terrain decor part with bases of different sizes or locking standards. Think of OpenForge 2.0 but instead of gluing, you clip your terrain parts to the base.  
 For the time being, OpenVLex supports bases with **OpenLOCK (Triplex)** standard, and also the versatile **OpenForge Magnetic OpenLOCK** bases. Other locking systems (Dragonlock, Infinitylock) might be supported in the future. 
 
 ![img001](img/openvlex2.gif)
@@ -38,8 +38,8 @@ To give you an idea of how OpenVLex works and to give you a better feeling of it
 
 1. Choose your favorite OpenForge 2.0 floor terrain set.  
    (If unsure, start with Devon Jones' well-known <a href="https://www.thingiverse.com/thing:2740273" target="_blank">OpenForge 2.0 Dungeon Stone Floor</a>)
-2. Print **one** 1x1, **one** 2x2 and **four** 2x1 inch based (Dungeon Stone) Floor tiles.  
-   Print only the floor parts **without** the OpenForge 2.0 bases!  
+2. Print **one** 1x1, **one** 2x2 and **four** 2x1 inch based (Dungeon Stone) floor parts.  
+   Print only the decor parts **without** the OpenForge 2.0 bases!  
    (Expect a printing time of ~ 3 hours with medium quality on FFF printer)  
    ![img001](img/img001.jpg)
 3. Download [latest release](https://github.com/manolitto/openvlex2/releases) of OpenVLex 2 if not yet done.
@@ -54,7 +54,7 @@ To give you an idea of how OpenVLex works and to give you a better feeling of it
    See [printing instructions for bases](bases/README.md).  
    (Printing times: 1x1 = ~20 mins, 2x2 = ~1 hour, 7x1 = ~2 hours)
    ![img001](img/img004.jpg)
-7. Optional: 👩‍🎨 Paint your floor tiles in the meantime. 👨‍🎨
+7. Optional: 👩‍🎨 Paint your floor parts in the meantime. 👨‍🎨
 8. 👍 Finished!  
    Enjoy having **14 (fourteen!) different tile size opportunities** with just having printed (and painted 🥺 ) six floor parts!      
   ![img001](img/img009.jpg)
