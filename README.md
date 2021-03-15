@@ -1,5 +1,5 @@
 <h1 align="center">OpenVLex 2</h1>
-<p align="center">A **V**ertical decor-to-base **L**ocking system for 3D printed terrain :national_park:</p>
+<p align="center">A <b>V</b>ertical decor-to-base <b>L</b>ocking system for 3D printed terrain :national_park:</p>
 <p align="center">
   <a href="#about">About</a> •
   <a href="#download">Download</a> •
