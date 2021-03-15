@@ -21,7 +21,7 @@ There are different height variants:
 
 ## Instructions
 
-Print and apply OpenVLex jacks to the bottom.
+Print out the OpenVLex jacks and attach them to the bottom.
 
 
 ### Printing Notes
