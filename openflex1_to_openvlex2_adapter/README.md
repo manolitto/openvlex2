@@ -2,7 +2,7 @@
 
 ### Instructions
 
-- Print one adapter plate for every OpenFLex 1 tile you want to upgrade
+- Print one adapter plate for every OpenFLex 1 tile you want to upgrade. Two sizes are provided. The smaller one is meant for upgrading risers, the larger for upgrading legacy bases (if you really want to).
 - Print adapter sockets for every legacy socket on your tiles that you want to upgrade
 - Glue the adapter parts on your tile (see below)
 
