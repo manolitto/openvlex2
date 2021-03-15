@@ -96,7 +96,7 @@ A: Rest asured, you won't need to! Simply remove the broken jack with pliers and
 
 ### What about OpenFLex 1 ?
 
-The old OpenFLex 1 system is no longer sustained and I recommend switching over to OpenVLex 2.
+The old OpenFLex 1 system is no longer maintained and I recommend switching over to OpenVLex 2.
 
 But wait, what if...
 
