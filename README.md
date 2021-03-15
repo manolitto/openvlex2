@@ -24,7 +24,7 @@ Key features:
 
 * OpenVLex gives you **dynamic floors out of the box**: every 1x1 floor tile can immediately be used for mosaics, patterned floors or as scatter. 
 
-* **Save printing time and money**. And save plastic and rare-earth (magnets). Save the planet! 🌍🌎🌏🤓
+* With having a basic set of reusable bases of various sizes you will never have to print a base again. **Save printing time and money**. And save plastic and rare-earth (magnets). Save the planet! 🌍🌎🌏🤓
 
 * OpenVLex is non-commercial open source and I created it in my spare time. Feel **free to use** it. Please do not buy me a coffee or a beer, instead please be a nice person and help people in need. ☺️   
   And please share your OpenVLex experience with me and give me feedback!  
