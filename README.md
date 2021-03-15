@@ -24,6 +24,8 @@ Key features:
 
 * OpenVLex gives you **dynamic floors out of the box**: every 1x1 floor tile can immediately be used for mosaics, patterned floors or as scatter. 
 
+* Save printing time and money. And save plastic and rare-earth (magnets). Save the planet! 🌍🌎🌏🤓
+
 * OpenVLex is non-commercial open source and I created it in my spare time. Feel **free to use** it. Please do not buy me a coffee or a beer, instead please be a nice person and help people in need. ☺️   
   And please share your OpenVLex experience with me and give me feedback!  
   Download [here](https://github.com/manolitto/openvlex2/releases).
@@ -51,7 +53,7 @@ To give you an idea of how OpenVLex works and to give you a better feeling of it
    See [printing instructions for bases](bases/README.md).  
    (Printing times: 1x1 = ~20 mins, 2x2 = ~1 hour, 7x1 = ~2 hours)
    ![img001](img/img004.jpg)
-7. Optional: 👩‍ Paint your floor tiles in the meantime. 👨‍
+7. Optional: 👩‍🎨 Paint your floor tiles in the meantime. 👨‍🎨
 8. 👍 Finished!  
    Enjoy having **14 (fourteen!) different tile size opportunities** with just having printed (and painted 🥺 ) six floor parts!      
   ![img001](img/img009.jpg)
