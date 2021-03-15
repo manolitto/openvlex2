@@ -12,9 +12,9 @@ The OpenVLex vertical locking can be used in many ways but the most common use c
 
 Key features:
 
-* **Extend** your already owned tile sets. OpenVLex is **NOT** yet another locking system.
+* **Extend** your already owned tile sets. OpenVLex is **NOT yet another tile locking system**, the purpose is to make Magnetic/OpenLOCK tiles even more versatile.
 
-* Magnetic bases are cool and handy but not as versatile and solidly clipping together as Triplex parts: With OpenVLex you can **pick the appropriate locking system "just in time"**.
+* Magnetic bases are cool and handy but not as versatile and not as solidly clipping together as Triplex parts: With OpenVLex you can **pick the appropriate tile locking system "just in time"**.
 
 * Large overhanging (upper) floors clipped together are not always as solid as needed. With OpenVLex you can build **rock solid upper floors** even with tiny 1x1 wall or corner parts on up to 8x8 bases (or even larger if your printer is capable).
 
@@ -24,7 +24,8 @@ Key features:
 
 * OpenVLex gives you **dynamic floors out of the box**: every 1x1 floor tile can immediately be used for mosaics, patterned floors or as scatter. 
 
-* OpenVLex is non-commercial open source and I created it in my spare time. Feel **free to use** it. Please do not buy me a coffee or a beer, instead please be a nice person and help people in need. And please share your OpenVLex experience with me and give me feedback.  
+* OpenVLex is non-commercial open source and I created it in my spare time. Feel **free to use** it. Please do not buy me a coffee or a beer, instead please be a nice person and help people in need. ☺️   
+  And please share your OpenVLex experience with me and give me feedback!  
   Download [here](https://github.com/manolitto/openvlex2/releases).
 
 
@@ -50,14 +51,14 @@ To give you an idea of how OpenVLex works and to give you a better feeling of it
    See [printing instructions for bases](bases/README.md).  
    (Printing times: 1x1 = ~20 mins, 2x2 = ~1 hour, 7x1 = ~2 hours)
    ![img001](img/img004.jpg)
-7. Optional: Paint your floor tiles in the meantime.
-8. Finished!  
-   Enjoy having **14 (fourteen!) different tile size opportunities** with just having printed (and painted) six floor parts!      
+7. Optional: 👩‍🎨 Paint your floor tiles in the meantime. 👨‍🎨
+8. 👍 Finished!  
+   Enjoy having **14 (fourteen!) different tile size opportunities** with just having printed (and painted 🥺) six floor parts!      
   ![img001](img/img009.jpg)
   ![img001](img/img010.jpg)
   ![img001](img/img011.jpg)
    
-   And look forward to even more flexibility. Read on...
+   And look forward to even more flexibility. 😲 Read on...
    
 ### Where to continue
 
@@ -81,11 +82,14 @@ If either you are not yet convinced or already eager to learn more about OpenVLe
 
 FAQs
 ----
+Q: OpenForge walls and corners from the construction sets are normally glued onto the base together with matching floor parts. How does this work with OpenVLex jacks?  
+A: Print them together as one part! Simply assemble the parts you want to combine in your slicer. In Slic3r/PrusaSlicer/SuperSlicer this is rather easy. I guess its also possible in Cura although I never tried.
+
 Q: Sometimes larger floor tiles are hard to unplug and remove from the base. Any hints?  
 A: If using your fingernails 💅&nbsp;is not an option 😬&nbsp;, use flat pliers to squeeze the jacks from the bottom side and gently push them through. Or use a flat screwdriver to carefully spread apart the two pieces from all four sides in gradual steps.
   
 Q: The jacks look fragile and I am sure I will manage to break one. I do not want to throw away painted tiles because of a broken jack!  
-A: Rest asured, you won't need to! Simply remove the broken jack with pliers and a carpet knife (mind your fingers!). To be on the safe side you might consider using a less stronger plastic glue instead of super glue. However, I use cheap super glue myself and was able to completely remove jacks successfully several times.
+A: Rest asured, you won't need to! Simply remove the broken jack with pliers and a carpet knife (⚠️ mind your fingers! 🤕). To be on the safe side you might consider using a less stronger plastic glue instead of super glue. However, I use cheap super glue myself and was able to completely remove jacks successfully several times.
 
 ### What about OpenFLex 1 ?
 
@@ -93,7 +97,7 @@ The old OpenFLex 1 system is no longer sustained and I recommend switching over 
 
 But wait, what if...
 
-* ... you already have a bunch of floor and wall tiles with attached **legacy plug plates**? Simply remove those old plates by means of pliers and a carpet knife (take care of your fingers!). Then replace them by the corresponding number of OpenVLex 2 jacks.
+* ... you already have a bunch of floor and wall tiles with attached **legacy plug plates**? Simply remove those old plates by means of pliers and a carpet knife (⚠️ take care of your fingers!🤕). Then replace them by the corresponding number of OpenVLex 2 jacks.
 
 * ... you already have a bunch of **legacy OpenFLex 1 base parts**? Although you may convert them to the new standard with the [adapter](openvlex_1to2_adapter/README.md), I strongly recommend printing new bases instead, re-use the magnetic balls, and throw away or recycle the old bases.
 
