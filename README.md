@@ -42,14 +42,14 @@ To give you an idea of how OpenVLex works and to give you a better feeling of it
    (Expect a printing time of ~ 3 hours with medium quality on FFF printer)  
    ![img001](img/img001.jpg)
 3. Download [latest release](https://github.com/manolitto/openvlex2/releases) of OpenVLex 2 if not yet done.
-4. Print fourteen **OpenVLex jacks**. See [jack printing details and hints](jacks/README.md).  
+4. Print fourteen **[OpenVLex jacks](jacks/)**. See [jack printing details and hints](jacks/README.md).  
    (Printing time < 40 mins)  
    ![img001](img/img013.jpg)
 5. Glue the jacks to the floor parts. See [jack gluing instructions](jacks/README.md#gluing-instructions).  
    (Note: You need only thirteen jacks, one is a spare)  
    ![img001](img/img002.jpg)
    ![img001](img/img003.jpg)
-6. Print some **OpenVLex Triplex bases** of your favorite sizes. For now, just print one of each of the size you prefer from the following list: 1x1, 2x1, 2x2, 3x2, 3x3, 4x1, 4x2, 4x3, 5x1, 5x2, 6x1, 6x2, 7x1, 8x1  
+6. Print some **[OpenVLex Triplex bases](bases/triplex.openvlex/)** of your favorite sizes. For now, just print one of each of the size you prefer from the following list: 1x1, 2x1, 2x2, 3x2, 3x3, 4x1, 4x2, 4x3, 5x1, 5x2, 6x1, 6x2, 7x1, 8x1  
    See [printing instructions for bases](bases/README.md).  
    (Printing times: 1x1 = ~20 mins, 2x2 = ~1 hour, 7x1 = ~2 hours)
    ![img001](img/img004.jpg)
@@ -69,7 +69,7 @@ If either you are not yet convinced or already eager to learn more about OpenVLe
 * Print **other floor style parts** (Cut Stone, Rough Stone, Towne, ...) of common 1x1, 2x1 and 2x2 sizes. Apply OpenVLex jacks and enjoy using them with your ready bases of different sizes.  
   ![img001](img/img012.jpg)
 
-* Print some **OpenVLex Magnetic bases** (see [instructions](bases/README.md)) and use them as alternative bases for situations and scenes where you need more flexibility during gaming sessions.    
+* Print some **[OpenVLex Magnetic bases](bases/magnetic.openlock.openvlex/)** (see [instructions](bases/README.md)) and use them as alternative bases for situations and scenes where you need more flexibility during gaming sessions.    
   ![img001](img/img006.jpg)
 
 * Print **walls, corners and doors** and use OpenVLex to combine them with floors to different sized tiles or even whole rooms.  
@@ -77,7 +77,7 @@ If either you are not yet convinced or already eager to learn more about OpenVLe
   ![img001](img/img007.jpg)
   ![img001](img/img008.jpg)
 
-* Print some **OpenVLex Riser and Stair remixes**, apply OpenVLex jacks and enjoy stacking and plugging the parts together and building stairs and platforms in endless varieties.
+* Print some **[OpenVLex Riser and Stair remixes](stairs_and_risers/)**, apply OpenVLex jacks and enjoy stacking and plugging the parts together and building stairs and platforms in endless varieties.
 
 * Print a bunch of 1x1 floor tiles of different styles (e.g. Dwarven Plain and Knotwork) and enjoy creating **mosaics and patterned floor** plates in endless varieties.
 
