@@ -110,10 +110,15 @@ But wait, what if...
 Credits
 -------
 
-OpenVLex is based on OpenForge 2.0 and partly remixed from:
+OpenVLex is based on OpenForge 2.0 by [Masterwork Tools](https://www.patreon.com/masterworktools/) and partly remixed from:
 
 * [https://www.thingiverse.com/thing:2740279](https://www.thingiverse.com/thing:2740279)
 * [https://www.thingiverse.com/thing:1508410](https://www.thingiverse.com/thing:1508410)
 * [https://www.thingiverse.com/thing:3393468](https://www.thingiverse.com/thing:3393468)
 * [https://www.thingiverse.com/thing:1758162](https://www.thingiverse.com/thing:1758162)
 
+The OpenLOCK system was created by [Printable Scenery](https://www.printablescenery.com/product/open-lock/).
+
+License
+-------
+OpenVLex 2 is licensed under the "Creative Commons Attribution Share Alike 4.0 International" (cc-by-sa-4.0)
