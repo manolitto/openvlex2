@@ -30,7 +30,7 @@ Note: With cheap PLA and/or with some printers it might be necessary to use base
 Alternative bases which can be used if you have difficulties with bridging and see holes on the surface of your triplex base.
 
 Note: Be extra careful when removing the supports. There are four support bars per connector opening: Two identical to standard triplex and two right behind them deeper inside.  
-Do not mistake them with the OpenLOCK 
+Important: **Do not mistake the supports with the OpenLOCK bars!**
 
 ### Printing Notes
 
