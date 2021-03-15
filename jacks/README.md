@@ -1,5 +1,5 @@
-OpenVLex Jack
--------------
+OpenVLex Jacks
+--------------
 
 OpenVLex jacks get glued to the bottom of "wall on tile" floor or wall tiles. Apply one jack per inch grid field. There is a printable stencil, which makes the gluing much easier and faster. See [gluing instructions](#gluing-instructions) below.
 

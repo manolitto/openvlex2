@@ -81,6 +81,7 @@ If either you are not yet convinced or already eager to learn more about OpenVLe
 
 * Print a bunch of 1x1 floor tiles of different styles (e.g. Dwarven Plain and Knotwork) and enjoy creating **mosaics and patterned floor** plates in endless varieties.
 
+* Build great dungeons and houses. **Have fun!** 🤩 
 
 FAQs
 ----
