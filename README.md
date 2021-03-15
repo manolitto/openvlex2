@@ -86,7 +86,7 @@ To give you an idea of how OpenVLex works and the advantages it offers, you can 
 
 7. **(Optional)** :man_artist: In the meantime, paint your floor parts. :woman_artist:
 
-8. :thumbsup: Done!  
+8. :thumbsup: **Done!**  
    Enjoy having **14 (fourteen!) different tile sizes** at your disposal with just six printed (and painted :pleading_face:) floor pieces!  
    
    ![Finished pieces 1](img/img009.jpg)  
