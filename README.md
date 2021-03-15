@@ -26,7 +26,7 @@ Key features:
 
 * With having a basic set of reusable bases of various sizes you will never have to print a base again. **Save printing time and money**. And save plastic and rare-earth (magnets). Save the planet! 🌍🌎🌏🤓
 
-* OpenVLex is non-commercial open source and I created it in my spare time. Feel **free to use** it. Please do not buy me a coffee or a beer, instead please be a nice person and help people in need. ☺️   
+* OpenVLex is non-commercial **open source** and I created it in my spare time. Feel **free to use** it. Do not buy me a coffee or a beer, instead please be a nice person and help people in need. ☺️   
   And please share your OpenVLex experience with me and give me feedback!  
   Download [here](https://github.com/manolitto/openvlex2/releases).
 
@@ -45,7 +45,7 @@ To give you an idea of how OpenVLex works and to give you a better feeling of it
 4. Print fourteen **OpenVLex jacks**. See [jack printing details and hints](jacks/README.md).  
    (Printing time < 40 mins)  
    ![img001](img/img013.jpg)
-5. Glue the jacks to the floor parts. See [jack gluing instructions](jacks/README.md).  
+5. Glue the jacks to the floor parts. See [jack gluing instructions](jacks/README.md#gluing-instructions).  
    (Note: You need only thirteen jacks, one is a spare)  
    ![img001](img/img002.jpg)
    ![img001](img/img003.jpg)
