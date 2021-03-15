@@ -101,9 +101,9 @@ But wait, what if...
 
 * ... you already have a bunch of floor and wall tiles with attached **legacy plug plates**? Simply remove those old plates by means of pliers and a carpet knife (⚠️ take care of your fingers! 🤕 ). Then replace them by the corresponding number of OpenVLex 2 jacks.
 
-* ... you already have a bunch of **legacy OpenFLex 1 base parts**? Although you may convert them to the new standard with the [adapter](openvlex_1to2_adapter/README.md), I strongly recommend printing new bases instead, re-use the magnetic balls, and throw away or recycle the old bases.
+* ... you already have a bunch of **legacy OpenFLex 1 base parts**? Although you may convert them to the new standard with the [adapter](openflex1_to_openvlex2_adapter/README.md), I strongly recommend printing new bases instead, re-use the magnetic balls, and throw away or recycle the old bases.
 
-* ... you already have some **laboriously painted riser or stair parts** which are based on the legacy OpenFLex 1 system? Do **not** throw them away! There is a way to make your old parts OpenVLex 2 compatible with [this special adapter part](openvlex_1to2_adapter/README.md).
+* ... you already have some **laboriously painted riser or stair parts** which are based on the legacy OpenFLex 1 system? Do **not** throw them away! There is a way to make your old parts OpenVLex 2 compatible with [this special adapter part](openflex1_to_openvlex2_adapter/README.md).
 
 Credits
 -------
