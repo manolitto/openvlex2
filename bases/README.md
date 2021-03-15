@@ -24,7 +24,7 @@ There are (currently) three OpenVLex base variants:
 
 1. Print one lower part and one upper part of your chosen size.
 
-2. Turn the upper part over and insert 5mm magnetic balls into the round holes of the upper part.
+2. Turn the upper part over and insert 5 mm magnetic balls into the round holes of the upper part.
 
 3. Apply (super) glue, but be careful not to soil the magnetic balls.
 
@@ -36,7 +36,7 @@ There are (currently) three OpenVLex base variants:
 Print and postprocess similar to OpenForge bases.
 Use flat-nose pliers to remove the supports. Be careful not to accidentally remove the OpenLOCK bars.
 
-> **Note:** With cheap PLA and/or with some printers it may be necessary to use bases with additional supports. If you see ugly holes on the top, you can either try to adjust your printer configuration to improve bridging (different PLA, hotend temperature, bridging speed, 0.10mm layer height) or use the bases with additional supports - see below.
+> **Note:** With cheap PLA and/or with some printers it may be necessary to use bases with additional supports. If you see ugly holes on the top, you can either try to adjust your printer configuration to improve bridging (different PLA, hotend temperature, bridging speed, 0.10 mm layer height) or use the bases with additional supports - see below.
 
 
 ### Triplex Bases (with additional supports)
