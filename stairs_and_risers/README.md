@@ -1,7 +1,14 @@
-OpenVLex 2 Stairs and Risers
-----------------------------
+# OpenVLex 2 Stairs and Risers
+
+
+
+## About
 
 OpenVLex stairs and risers can be stacked and combined in endless variations.
+
+
+
+## Variants
 
 There are different height variants:
 
@@ -10,7 +17,9 @@ There are different height variants:
 - 1" risers/platforms
 - 1½" risers/platforms
 
-### Instructions
+
+
+## Instructions
 
 Print and apply OpenVLex jacks to the bottom.
 
