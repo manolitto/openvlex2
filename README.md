@@ -35,7 +35,7 @@ Key features:
 
 To give you an idea of how OpenVLex works and to give you a better feeling of it's benefits, you may follow this guide:
 
-1. Chose your favorite OpenForge 2.0 floor terrain set.  
+1. Choose your favorite OpenForge 2.0 floor terrain set.  
    (If unsure, start with Devon Jones' well-known <a href="https://www.thingiverse.com/thing:2740273" target="_blank">OpenForge 2.0 Dungeon Stone Floor</a>)
 2. Print **one** 1x1, **one** 2x2 and **four** 2x1 inch based (Dungeon Stone) Floor tiles.  
    Print only the floor parts **without** the OpenForge 2.0 bases!  
@@ -91,7 +91,7 @@ Q: Sometimes larger floor tiles are hard to unplug and remove from the base. Any
 A: If using your fingernails 💅&nbsp;is not an option 😬&nbsp;, use flat pliers to squeeze the jacks from the bottom side and gently push them through. Or use a flat screwdriver to carefully spread apart the two pieces from all four sides in gradual steps.
   
 Q: The jacks look fragile and I am sure I will manage to break one. I do not want to throw away painted tiles because of a broken jack!  
-A: Rest asured, you won't need to! Simply remove the broken jack with pliers and a carpet knife (⚠️ mind your fingers! 🤕). To be on the safe side you might consider using a less stronger plastic glue instead of super glue. However, I use cheap super glue myself and was able to completely remove jacks successfully several times.
+A: Rest asured, you won't need to! Simply remove the broken jack with pliers and a carpet knife (⚠️ mind your fingers! 🤕 ). To be on the safe side you might consider using a less stronger plastic glue instead of super glue. However, I use cheap super glue myself and was able to completely remove jacks successfully several times.
 
 ### What about OpenFLex 1 ?
 
@@ -99,7 +99,7 @@ The old OpenFLex 1 system is no longer sustained and I recommend switching over 
 
 But wait, what if...
 
-* ... you already have a bunch of floor and wall tiles with attached **legacy plug plates**? Simply remove those old plates by means of pliers and a carpet knife (⚠️ take care of your fingers!🤕). Then replace them by the corresponding number of OpenVLex 2 jacks.
+* ... you already have a bunch of floor and wall tiles with attached **legacy plug plates**? Simply remove those old plates by means of pliers and a carpet knife (⚠️ take care of your fingers! 🤕 ). Then replace them by the corresponding number of OpenVLex 2 jacks.
 
 * ... you already have a bunch of **legacy OpenFLex 1 base parts**? Although you may convert them to the new standard with the [adapter](openvlex_1to2_adapter/README.md), I strongly recommend printing new bases instead, re-use the magnetic balls, and throw away or recycle the old bases.
 
