@@ -51,7 +51,7 @@ To give you an idea of how OpenVLex works and to give you a better feeling of it
    See [printing instructions for bases](bases/README.md).  
    (Printing times: 1x1 = ~20 mins, 2x2 = ~1 hour, 7x1 = ~2 hours)
    ![img001](img/img004.jpg)
-7. Optional: 👩‍🎨 Paint your floor tiles in the meantime. 👨‍🎨
+7. Optional: 👩‍ Paint your floor tiles in the meantime. 👨‍
 8. 👍 Finished!  
    Enjoy having **14 (fourteen!) different tile size opportunities** with just having printed (and painted 🥺) six floor parts!      
   ![img001](img/img009.jpg)
