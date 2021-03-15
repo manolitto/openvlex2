@@ -4,7 +4,7 @@ _OpenVLex is a **V**ertical tile-to-base **L**ocking system for 3D printed terra
 
 OpenVLex makes it possible to print and use base and terrain parts in a more **flexible** way by providing a special vertical locking mechanism while still adhering to the widely used, well established tile locking systems. You can use the same terrain part with bases of different sizes or locking standards. Currently, OpenVLex supports bases with **OpenLOCK (Triplex)** standard, and also the versatile **OpenForge Magnetic OpenLOCK** bases. Other locking systems (Dragonlock, Infinitylock) might be supported in the future. 
 
-![img001](img/openvlex001.gif)
+![img001](img/openvlex2.gif)
 
 ### What to expect
 
