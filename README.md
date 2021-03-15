@@ -53,7 +53,7 @@ To give you an idea of how OpenVLex works and to give you a better feeling of it
    ![img001](img/img004.jpg)
 7. Optional: 👩‍🎨 Paint your floor tiles in the meantime. 👨‍🎨
 8. 👍 Finished!  
-   Enjoy having **14 (fourteen!) different tile size opportunities** with just having printed (and painted 🥺) six floor parts!      
+   Enjoy having **14 (fourteen!) different tile size opportunities** with just having printed (and painted 🥺 ) six floor parts!      
   ![img001](img/img009.jpg)
   ![img001](img/img010.jpg)
   ![img001](img/img011.jpg)
