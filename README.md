@@ -141,7 +141,7 @@ If you are either not yet convinced or already eager to learn more about the pos
 
 **A:** Rest assured that you don't have to! Simply remove the broken jack with pliers and a carpet knife (:warning: Watch your fingers! :face_with_head_bandage:). To be on the safe side, you might consider using a less strong plastic glue instead of superglue. However, I myself use cheap superglue and have been able to successfully remove the jacks completely several times.
 
-
+---
 
 ### What about OpenFLex 1?
 
