@@ -1,11 +1,17 @@
-OpenVLex Gluing Stencils
-------------------------
+# OpenVLex Gluing Stencils
 
-Stencils for easier and more accurately gluing OpenVLex jacks to the bottom of tiles.
 
-### Instructions
 
-As a basic set print one 1x1, one 2x1, and one 2x2 stencil. This should cover 90% of your OpenVLex tiles. Remember that the OpenVLex mission is to prevent the need of exotic tile sizes. However, you may still use the enclosed OpenSCAD file to generate a less common sized stencil.
+## About
+
+Stencils for easier and more accurate gluing of OpenVLex jacks onto the underside of tiles.
+
+
+
+## Instructions
+
+As a basic set, print one 1x1, one 2x1 and one 2x2 stencil. This should cover 90% of your OpenVLex tiles. Remember that the purpose of OpenVLex is to prevent the need for exotic tile sizes. However, you can use the attached OpenSCAD file  to generate a less common sized stencil.
+
 
 ### Printing Notes
 
