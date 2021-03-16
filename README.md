@@ -17,6 +17,7 @@
 OpenVLex makes it possible to print and use base and terrain parts more **flexibly** by providing a special vertical locking mechanism while still adhering to the widely used, well-established tile locking systems. You can use the same terrain decor piece with bases of different sizes or locking standards. Think OpenForge 2.0, but instead of gluing, you clip your terrain pieces to the base.  
 For now, OpenVLex supports bases with **OpenLOCK (Triplex)** standard, and also the versatile **OpenForge Magnetic OpenLOCK** bases. Other locking systems (Dragonlock, Infinitylock) may be supported in the future.
 
+![OpenLOCK compatible](img/OpenLOCK-logo-Tiny.png)
 
 ### What to expect
 
@@ -160,19 +161,20 @@ But wait, what if ...
 
 ## Credits
 
-OpenVLex is based on OpenForge 2.0 by [Masterwork Tools](https://www.patreon.com/masterworktools/) and has been partially remixed:
+OpenVLex is based on OpenForge 2.0 by [Masterwork Tools](https://www.patreon.com/masterworktools/) and has been partially remixed from:
 
 * [OpenForge 2.0 Wall On Tile Bases](https://www.thingiverse.com/thing:2740279)
 * [OpenForge 2.0 Cut Stone Stairs](https://www.thingiverse.com/thing:1508410)
 * [OpenForge 2.0 Dungeon Stone Stairs](https://www.thingiverse.com/thing:3393468)
 * [OpenForge 2.0 Tudor Stairs](https://www.thingiverse.com/thing:1758162)
 
-The OpenLOCK system was created by [Printable Scenery](https://www.printablescenery.com/product/open-lock/).
+The OpenLOCK system was created by [Printablescenery](https://www.printablescenery.com/product/open-lock/).
 
+![OpenLOCK compatible](img/OpenLOCK-logo-Small.png)
 
 
 ## License
 
-OpenVLex 2 is licensed under the "Creative Commons Attribution Share Alike 4.0 International" (cc-by-sa-4.0)
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">OpenVLex 2</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-
+The OpenLOCK system is used under the BSD license: [Printablescenery OpenLOCK license](https://www.printablescenery.com/2021/03/17/openvlex-2/)
