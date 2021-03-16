@@ -1,6 +1,6 @@
 <p align="center"><img src="img/openvlex2.gif" alt="OpenVLex2 Showcase" width="400"></p>
 <h1 align="center">OpenVLex 2</h1>
-<p align="center">A decor-to-base <b>V</b>ertical <b>L</b>ocking <b>EX</b>tension system for 3D printed terrain</p>
+<p align="center">A decor-to-base <b>V</b>ertical <b>L</b>ocking <b>ex</b>tension system for 3D printed terrain</p>
 <p align="center">
   <a href="#about">About</a> •
   <a href="#download">Download</a> •
@@ -55,7 +55,7 @@ You can find the latest release [here](https://github.com/manolitto/openvlex2/re
 To give you an idea of how OpenVLex works and the advantages it offers, you can follow this guide:
 
 1. Choose your favourite OpenForge 2.0 floor terrain set.  
-   > If you are unsure, start with Devon Jones' well-known [OpenForge 2.0 Dungeon Stone Floor](https://www.thingiverse.com/thing:2740273))
+   > If you are unsure, start with Devon Jones' well-known [OpenForge 2.0 Dungeon Stone Floor](https://www.thingiverse.com/thing:2740273)
 
 2. Print **one** 1x1, **one** 2x2 and **four** 2x1 inch based (Dungeon Stone) floor parts.  
    Print only the decor parts without the OpenForge 2.0 bases!  
