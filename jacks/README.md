@@ -49,3 +49,11 @@ The jacks are quite small parts, so the most important issue is the adhesion of 
 
 - Carefully remove the tile from the stencil. It may help to gently press and push the jacks together from underneath with flat-nose pliers. You can also use a flat screwdriver to carefully lift the tile - that's what the notches on the stencil are for.
 
+
+## Remix your own risers and stairs
+
+Use the attached [OpenVLex Connector Negative](openvlex_connector_negative_v2.13.stl) as a negative stamp if you want to kitbash tiles to have sockets:
+
+- vertically align connector negative tops to the top of your piece
+
+- horizontally center align connector negatives to the inch grid
