@@ -1,3 +1,4 @@
+<p align="center"><img src="img/openvlex2.gif" alt="OpenVLex2 Showcase" width="400"></p>
 <h1 align="center">OpenVLex 2</h1>
 <p align="center">A <b>V</b>ertical decor-to-base <b>L</b>ocking system for 3D printed terrain :national_park:</p>
 <p align="center">
@@ -15,9 +16,6 @@
 
 OpenVLex makes it possible to print and use base and terrain parts more **flexibly** by providing a special vertical locking mechanism while still adhering to the widely used, well-established tile locking systems. You can use the same terrain decor piece with bases of different sizes or locking standards. Think OpenForge 2.0, but instead of gluing, you clip your terrain pieces to the base.  
 For now, OpenVLex supports bases with **OpenLOCK (Triplex)** standard, and also the versatile **OpenForge Magnetic OpenLOCK** bases. Other locking systems (Dragonlock, Infinitylock) may be supported in the future.
-
-![OpenVLex2 Showcase](img/openvlex2.gif)
-
 
 
 ### What to expect
