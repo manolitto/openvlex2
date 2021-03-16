@@ -1,6 +1,6 @@
 <p align="center"><img src="img/openvlex2.gif" alt="OpenVLex2 Showcase" width="400"></p>
 <h1 align="center">OpenVLex 2</h1>
-<p align="center">A decor-to-base <b>V</b>ertical <b>L</b>ocking EXtension system for 3D printed terrain</p>
+<p align="center">A decor-to-base <b>V</b>ertical <b>L</b>ocking <b>EX</b>tension system for 3D printed terrain</p>
 <p align="center">
   <a href="#about">About</a> •
   <a href="#download">Download</a> •
