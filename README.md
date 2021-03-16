@@ -46,7 +46,7 @@ OpenVLex vertical locking can be used in many ways, but the most common use case
 
 ## Download
 
-You can find the latest release [here](https://github.com/manolitto/openvlex2/releases).
+You can find the latest release [here](https://github.com/manolitto/openvlex2/releases/latest).
 
 
 
@@ -63,7 +63,7 @@ To give you an idea of how OpenVLex works and the advantages it offers, you can 
    
    ![Floor tiles](img/img001.jpg)
 
-3. Download [the latest version](https://github.com/manolitto/openvlex2/releases) of OpenVLex 2 if you haven't already done so.
+3. Download [the latest version](https://github.com/manolitto/openvlex2/releases/latest) of OpenVLex 2 if you haven't already done so.
 
 4. Print fourteen **[OpenVLex jacks](jacks/)**. See [jack printing details and hints](jacks/README.md).  
    > **Printing time:** < 40 mins
