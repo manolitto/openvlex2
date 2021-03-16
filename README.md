@@ -25,9 +25,9 @@ OpenVLex vertical locking can be used in many ways, but the most common use case
 
 #### Key features:
 
-- **Extend** the tile sets you already have. OpenVLex is **NOT another tile locking system**, but serves to make Magnetic/OpenLOCK tiles even more versatile.
+- **Extend** the tile sets you already have. OpenVLex is **NOT yet another tile locking system**, but serves to make Magnetic/OpenLOCK tiles even more versatile.
 
-- Magnetic bases are cool and practical, but not as versatile and not as solidly clipping together as Triplex parts: With OpenVLex you can **choose the right tile locking system "just in time"**.
+- Magnetic bases are cool and handy, but not as versatile and not as solidly clipping together as Triplex parts: With OpenVLex you can **choose the right tile locking system "just in time"**.
 
 - Large overhanging (upper) floors clipped together are not always as solid as they need to be. With OpenVLex you can build **rock solid upper floors** even with tiny 1x1 wall or corner pieces on up to 8x8 bases (or even larger if your printer is capable).
 
