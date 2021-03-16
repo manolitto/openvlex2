@@ -41,9 +41,7 @@ The jacks are quite small parts, so the most important issue is the adhesion of 
 
 - For wall tiles and non-square floor tiles (e.g. 2x1), it is advisable to align the sockets so that the "slot" of the jack points towards the wall or the longer tile side. It is then much easier to unplug the tile by wiggling it slightly.
 
-- Use either:
-  - **plastic glue**, which takes longer to be strong enough for plugging and unplugging the tile, or
-  - **superglue**, which allows the tile to be used immediately after a few minutes, but is more difficult to remove if one of the "lips" of the jack breaks one day.
+- Use **superglue**, which allows the tile to be used immediately after a few minutes. And in case a jack breaks one day it's easy to remove and replace it: put the tile in your freezer for a while and remove it with a carpet knife.
 
 - Use clamps to press the pieces firmly together until the glue is strong enough.
 

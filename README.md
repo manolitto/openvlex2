@@ -137,7 +137,7 @@ If you are either not yet convinced or already eager to learn more about the pos
 
 **Q:** The jacks look fragile and I am sure I will manage to break one. I don't want to throw away painted tiles because of a broken jack!  
 
-**A:** Rest assured that you don't have to! Simply remove the broken jack with pliers and a carpet knife (:warning: Watch your fingers! :face_with_head_bandage:). To be on the safe side, you might consider using a less strong plastic glue instead of superglue. However, I myself use cheap superglue and have been able to successfully remove the jacks completely several times.
+**A:** Rest assured that you don't have to! Try to remove the broken jack with pliers and a carpet knife (:warning: Watch your fingers! :face_with_head_bandage:). If the joint is too strong, put the tile into the freezer for some while. This makes the superglue brittle. (Thanks, Devon Jones, for this valuable hint!)
 
 ---
 
@@ -148,7 +148,7 @@ The old OpenFLex 1 system is no longer maintained and I recommend switching to O
 But wait, what if ...
 
 - ... you already have a bunch of floor and wall tiles with **legacy plug plates** attached?  
-  Simply remove these old plates with the help of pliers and a carpet knife (:warning: Watch your fingers! :face_with_head_bandage:). Then replace them with the appropriate number of OpenVLex 2 jacks.
+  Simply put the tiles into the freezer for some while. This makes the superglue brittle and lets you easily remove the old plates with the help of pliers and a carpet knife (:warning: Watch your fingers! :face_with_head_bandage:). Then replace them with the appropriate number of OpenVLex 2 jacks.
 
 - ... you already have a bunch of **legacy OpenFLex 1 base parts**?  
   Although you can convert them to the new standard with the [adapter](openflex1_to_openvlex2_adapter/README.md), I strongly recommend that you print new bases instead, reuse the magnetic balls and throw away or recycle the old bases.
