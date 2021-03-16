@@ -61,14 +61,14 @@ To give you an idea of how OpenVLex works and the advantages it offers, you can 
 
 2. Print **one** 1x1, **one** 2x2 and **four** 2x1 inch based (Dungeon Stone) floor parts.  
    Print only the decor parts without the OpenForge 2.0 bases!  
-   > Expect a printing time of ~3 hours at medium quality on a FFF printer
+   > **Printing time:** ~3 hours at medium quality on a FFF printer
    
    ![Floor tiles](img/img001.jpg)
 
 3. Download [the latest version](https://github.com/manolitto/openvlex2/releases) of OpenVLex 2 if you haven't already done so.
 
 4. Print fourteen **[OpenVLex jacks](jacks/)**. See [jack printing details and hints](jacks/README.md).  
-   > Printing time < 40 mins
+   > **Printing time:** < 40 mins
    
    ![OpenVLex jacks](img/img013.jpg)
 
@@ -80,7 +80,7 @@ To give you an idea of how OpenVLex works and the advantages it offers, you can 
 
 6. Print out some **[OpenVLex Triplex bases](bases/triplex.openvlex/)** in the sizes you want. For now, print only one of each of your preferred sizes from the following list: 1x1, 2x1, 2x2, 3x2, 3x3, 4x1, 4x2, 4x3, 5x1, 5x2, 6x1, 6x2, 7x1, 8x1.  
    See [printing instructions for bases](bases/README.md).  
-   > Printing times: 1x1 = ~20 mins, 2x2 = ~1 hour, 7x1 = ~2 hours
+   > **Printing times:** 1x1 = ~20 mins, 2x2 = ~1 hour, 7x1 = ~2 hours
    
    ![OpenVLex Triplex bases](img/img004.jpg)
 
