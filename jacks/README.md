@@ -31,7 +31,7 @@ The jacks are quite small parts, so the most important issue is the adhesion of 
 
 
 
-## <a name="gluing-instructions"></a>Gluing Instructions
+## Gluing Instructions
 
 - The recommended way to glue OpenVLex jacks to your tiles is to use one of the [gluing stencils](../gluing_stencils/README.md). However, for just trying out and testing OpenVLex you do not need a stencil yet, just use an already printed OpenVLex base as a stencil.  
   
