@@ -1378,7 +1378,9 @@ module openvlex_base(x, y, square_basis) {
 }
 
 module openvlex_tubes(x,y,square_basis) {
-    of_tube = 5.4;
+    openlock_clip_length = 19.5 + 0.1;
+    //of_tube = 5.4;
+    of_tube = (square_basis/2 - openlock_clip_length/2) * 2;
     for ( i = [0 : x-1] ) {
         for ( j = [0 : y-1] ) {
             // tube:
@@ -1535,9 +1537,9 @@ module openvlex_hole(x,y,square_basis) {
 
     of_hole_d = 3.8;    // OpenVLex hole diameter
 
-    of_tw_d = 4.8;      // top widening diameter
-    of_tw_y = 5.4;      // top widening y
-    of_tw_h = 0.3;      // top widening height
+    of_tw_d = 5.0;      // top widening diameter
+    of_tw_y = 3.4;      // top widening y
+    of_tw_h = 2.3;      // top widening height
     
     for ( i = [0 : x-1] ) {
         for ( j = [0 : y-1] ) {
