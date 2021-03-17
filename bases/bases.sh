@@ -37,7 +37,7 @@ do
 					# triplex
 					#
 					mkdir -p _out/triplex.openvlex
-					$OPENSCAD -o _out/triplex.openvlex/base.$style.$s.$basis.${x}x${y}.magnetic.openlock.openvlex.stl \
+					$OPENSCAD -o _out/triplex.openvlex/base.$style.$s.$basis.${x}x${y}.triplex.openvlex.stl \
 						-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
 						-D "shape=\"$s\"" \
 						-D "style=\"${style}\"" \
@@ -50,7 +50,7 @@ do
 					# triplex with supports
 					#
 					mkdir -p _out/triplex.openvlex_with_supports
-					$OPENSCAD -o _out/triplex.openvlex_with_supports/base.$style.$s.$basis.${x}x${y}.magnetic.openlock.openvlex_with_supports.stl \
+					$OPENSCAD -o _out/triplex.openvlex_with_supports/base.$style.$s.$basis.${x}x${y}.triplex.openvlex_with_supports.stl \
 						-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
 						-D "shape=\"$s\"" \
 						-D "style=\"${style}\"" \
