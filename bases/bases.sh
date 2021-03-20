@@ -16,6 +16,7 @@ declare -a shape=("square")
 #declare -a largecurvedsize=("6" "8")
 #declare -a odddiagonalsize=("2" "4")
 
+
 ##
 ## 1x1 - 4x4, square, diagonal, curved
 ##
@@ -31,7 +32,7 @@ do
 				for y in {1..8}
 				do
 
- 				  if [[ $x -ge $y ]] ; then
+ 				  if [ $x -ge $y ] ; then
 
 					#
 					# triplex
@@ -43,21 +44,26 @@ do
 						-D "style=\"${style}\"" \
 						-D "topless=\"false\"" \
 						-D "lock=\"triplex\"" -D "magnet_hole=0" -D 'priority="lock"' \
-						-D "openvlex=\"complete\"" -D "additional_supports=\"none\"" \
+						-D "ov_feature=\"square\"" \
+						-D "ov_part=\"all\"" \
+						-D "ov_additional_stability_bars=\"false\"" \
 						bases.scad
 
 					#
-					# triplex with supports
+					# triplex braced
 					#
-					mkdir -p _out/triplex.openvlex_with_supports
-					$OPENSCAD -o _out/triplex.openvlex_with_supports/base.$style.$s.$basis.${x}x${y}.triplex.openvlex_with_supports.stl \
+					mkdir -p _out/triplex.braced.openvlex
+					$OPENSCAD -o _out/triplex.braced.openvlex/base.$style.$s.$basis.${x}x${y}.triplex.braced.openvlex.stl \
 						-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
 						-D "shape=\"$s\"" \
 						-D "style=\"${style}\"" \
 						-D "topless=\"false\"" \
 						-D "lock=\"triplex\"" -D "magnet_hole=0" -D 'priority="lock"' \
-						-D "openvlex=\"complete\"" -D "additional_supports=\"two\"" \
+						-D "ov_feature=\"square\"" \
+						-D "ov_part=\"all\"" \
+						-D "ov_additional_stability_bars=\"true\"" \
 						bases.scad
+
 
 					#
 					# magnetic.openlock upper
@@ -69,7 +75,9 @@ do
 						-D "style=\"${style}\"" \
 						-D "topless=\"false\"" \
 						-D "lock=\"openlock\"" -D "magnet_hole=6" -D 'priority="magnets"' \
-						-D "openvlex=\"magnetic_upper\"" -D "additional_supports=\"none\"" \
+						-D "ov_feature=\"square\"" \
+						-D "ov_part=\"upper\"" \
+						-D "ov_additional_stability_bars=\"false\"" \
 						bases.scad
 
 					#
@@ -82,34 +90,76 @@ do
 						-D "style=\"${style}\"" \
 						-D "topless=\"false\"" \
 						-D "lock=\"openlock\"" -D "magnet_hole=6" -D 'priority="magnets"' \
-						-D "openvlex=\"magnetic_lower\"" -D "additional_supports=\"none\"" \
+						-D "ov_feature=\"square\"" \
+						-D "ov_part=\"lower\"" \
+						-D "ov_additional_stability_bars=\"false\"" \
 						bases.scad
 
-					# #
-					# # openlock.triplex
-					# #
-					# mkdir -p $basis/$style/$s/openlock.triplex/
-					# $OPENSCAD -o $basis/$style/$s/openlock.triplex/base.$style.$s.$basis.${x}x${y}.openlock.triplex.stl \
-					# 	-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
-					# 	-D "shape=\"$s\"" \
-					# 	-D "style=\"${style}\"" \
-					# 	-D "topless=\"false\"" \
-					# 	-D "lock=\"triplex\"" -D "magnet_hole=0" -D "priority=\"lock\"" bases.scad
-					# $CONVERTSTL $basis/$style/$s/openlock.triplex/base.$style.$s.$basis.${x}x${y}.openlock.triplex.stl
-					# mv $basis/$style/$s/openlock.triplex/base.$style.$s.$basis.${x}x${y}.openlock.triplex-binary.stl $basis/$style/$s/openlock.triplex/base.$style.$s.$basis.${x}x${y}.openlock.triplex.stl
+					if [ $x -eq $y ] && [ $x -gt 1 ] && [ $x -lt 5 ] ; then
 
-					# #
-					# # openlock.triplex with supports
-					# #
-					# mkdir -p $basis/$style/$s/openlock.triplex/
-					# $OPENSCAD -o $basis/$style/$s/openlock.triplex/base.$style.$s.$basis.${x}x${y}.openlock.triplex.stl \
-					# 	-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
-					# 	-D "shape=\"$s\"" \
-					# 	-D "style=\"${style}\"" \
-					# 	-D "topless=\"false\"" \
-					# 	-D "lock=\"triplex\"" -D "magnet_hole=0" -D "priority=\"lock\"" bases.scad
-					# $CONVERTSTL $basis/$style/$s/openlock.triplex/base.$style.$s.$basis.${x}x${y}.openlock.triplex.stl
-					# mv $basis/$style/$s/openlock.triplex/base.$style.$s.$basis.${x}x${y}.openlock.triplex-binary.stl $basis/$style/$s/openlock.triplex/base.$style.$s.$basis.${x}x${y}.openlock.triplex.stl
+						#
+						# triplex radial
+						#
+						mkdir -p _out/triplex.openvlex
+						$OPENSCAD -o _out/triplex.openvlex/base.$style.$s.$basis.${x}x${y}.triplex.radial.openvlex.stl \
+							-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
+							-D "shape=\"$s\"" \
+							-D "style=\"${style}\"" \
+							-D "topless=\"false\"" \
+							-D "lock=\"triplex\"" -D "magnet_hole=0" -D 'priority="lock"' \
+							-D "ov_feature=\"radial\"" \
+							-D "ov_part=\"all\"" \
+							-D "ov_additional_stability_bars=\"false\"" \
+							bases.scad
+
+						#
+						# triplex braced radial
+						#
+						mkdir -p _out/triplex.braced.openvlex
+						$OPENSCAD -o _out/triplex.braced.openvlex/base.$style.$s.$basis.${x}x${y}.triplex.braced.radial.openvlex.stl \
+							-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
+							-D "shape=\"$s\"" \
+							-D "style=\"${style}\"" \
+							-D "topless=\"false\"" \
+							-D "lock=\"triplex\"" -D "magnet_hole=0" -D 'priority="lock"' \
+							-D "ov_feature=\"radial\"" \
+							-D "ov_part=\"all\"" \
+							-D "ov_additional_stability_bars=\"true\"" \
+							bases.scad
+
+
+						#
+						# magnetic.openlock upper radial
+						#
+						mkdir -p _out/magnetic.openlock.openvlex
+						$OPENSCAD -o _out/magnetic.openlock.openvlex/base.$style.$s.$basis.${x}x${y}.magnetic.openlock.radial.openvlex_upper.stl \
+							-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
+							-D "shape=\"$s\"" \
+							-D "style=\"${style}\"" \
+							-D "topless=\"false\"" \
+							-D "lock=\"openlock\"" -D "magnet_hole=6" -D 'priority="magnets"' \
+							-D "ov_feature=\"radial\"" \
+							-D "ov_part=\"upper\"" \
+							-D "ov_additional_stability_bars=\"false\"" \
+							bases.scad
+
+						#
+						# magnetic.openlock lower radial
+						#
+						mkdir -p _out/magnetic.openlock.openvlex
+						$OPENSCAD -o _out/magnetic.openlock.openvlex/base.$style.$s.$basis.${x}x${y}.magnetic.openlock.radial.openvlex_lower.stl \
+							-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
+							-D "shape=\"$s\"" \
+							-D "style=\"${style}\"" \
+							-D "topless=\"false\"" \
+							-D "lock=\"openlock\"" -D "magnet_hole=6" -D 'priority="magnets"' \
+							-D "ov_feature=\"radial\"" \
+							-D "ov_part=\"lower\"" \
+							-D "ov_additional_stability_bars=\"false\"" \
+							bases.scad
+
+					fi
+
 
 				  fi
 

@@ -64,13 +64,17 @@ external_south = "false"; // [true, false]
 external_east = "false"; // [true, false]
 external_west = "false"; // [true, false]
 
-/* [OpenVLex] */
-// OpenVLex Render Mode?
-openvlex = "complete"; // [none, complete, magnetic_upper, magnetic_lower]
+/* [OpenVLex Feature] */
+// OpenVLex vertical locking feature
+ov_feature = "none"; // [none, square, radial]
 
-/* [Additional Supports] */
-// Add additional supports? (Recommended for OpenVLex)
-additional_supports = "none"; // [none, two, three]
+/* [OpenVLex Magnetic Part] */
+// Which part to render for magnetic OpenVLex
+ov_part = "all"; // [all, upper, lower, sockets_only]
+
+/* [OpenVLex Additional Supports] */
+// Add additional supports? (Recommended for OpenVLex triplex)
+ov_additional_stability_bars = "true"; // [true, false]
 
 
 /*
@@ -236,7 +240,7 @@ module magnet_positive(magnet_hole=5.5) {
 
 module magnet_negative(magnet_hole=5.5) {
     if (magnet_hole > 0) {
-        if (openvlex == "none") {
+        if (ov_feature == "none") {
             translate([magnet_hole/2+1,0,1]) cylinder(8,magnet_hole/2,magnet_hole/2, $fn=100);
             translate([magnet_hole/2+1,0,-2]) cylinder(10,.9,.9,$fn=50);
         } else {
@@ -1330,261 +1334,437 @@ module plain_alcove(x,y,square_basis,lock,edge_width) {
 
 
 /*
- * OpenVLex Support
+ * OpenVLex 2 Feature
  */
 
 
-module openvlex_cover_topmost(x, y, square_basis, of_sheet_diam=11) {
-    translate([0,0,5.7])
-    difference() {
-        cube([square_basis*x,square_basis*y,0.3]);
-        for ( i = [0 : x-1] ) {
-            for ( j = [0 : y-1] ) {
-                translate([i*square_basis, j*square_basis,0])
-                translate([square_basis/2-of_sheet_diam/2, square_basis/2-of_sheet_diam/2,0])
-                cube([of_sheet_diam,of_sheet_diam,0.4]);
-            }
-        }
+// OpenVLex socket
+
+module openvlex_connector_socket() {
+    
+    z_corr = ov_part == "sockets_only" ? 0.0 : 0.1;  // make it oversized on z axis when used as negative
+    
+    // diameters bottom to top:
+    ov_bw_d = 4.8;      // bottom widening diameter
+    ov_bw_z = 1.2;      // bottom widening z
+    ov_bw_h = 0.3;      // bottom widening height
+
+    ov_hole_d = 3.8;    // OpenVLex hole diameter
+    ov_hole_h = 6.0;    // OpenVLex hole height
+    
+    ov_tw_d = 5.0;      // top widening diameter
+    ov_tw_z = 3.4;      // top widening z
+    ov_tw_h = 2.3;      // top widening height
+    
+    ov_recess_d = 11.0; // diameter of top recess for the jack's plate
+    ov_recess_z = 5.7;  // z of top recess for the jack's plate
+    ov_recess_h = 0.3;  // height of top recess for the jack's plate
+    
+    // bottom widening:
+    color("blue") translate([-ov_bw_d/2, -ov_bw_d/2, -z_corr])
+    hull() {
+       translate([(ov_bw_d-ov_hole_d)/2,(ov_bw_d-ov_hole_d)/2, ov_bw_h + ov_bw_z + z_corr])
+          cube([ov_hole_d,ov_hole_d,0.01]);
+       cube([ov_bw_d,ov_bw_d, ov_bw_z + z_corr]);
     }
-}
 
-module openvlex_cover_supports(x, y, square_basis, of_sheet_diam = 11) {
-    of_supp_diam = of_sheet_diam + 0.4;
-    translate([0,0,5.4])
-    for ( i = [0 : x-1] ) {
-        for ( j = [0 : y-1] ) {
-            translate([i*square_basis, j*square_basis,0])
-            translate([square_basis/2-of_supp_diam/2, square_basis/2-of_supp_diam/2,0])
-            cube([of_supp_diam,of_supp_diam,0.3]);
-        }
+    // plug hole:
+    color("orange") translate([-ov_hole_d/2, -ov_hole_d/2, -z_corr])
+    cube([ov_hole_d,ov_hole_d, ov_hole_h +2*z_corr]);
+    
+    // top widening:
+    color("red") translate([-ov_tw_d/2, -ov_tw_d/2, ov_tw_z])
+    hull() {
+       translate([0,0,ov_tw_h])
+          cube([ov_tw_d,ov_tw_d, ov_hole_h - ov_tw_h - ov_tw_z + z_corr]);
+       translate([(ov_tw_d-ov_hole_d)/2,(ov_tw_d-ov_hole_d)/2,0])
+          cube([ov_hole_d, ov_hole_d, 0.01]);
     }
+    
+    // flat recess for the jack's plate:
+    color("green") translate([-ov_recess_d/2, -ov_recess_d/2, ov_recess_z])
+    cube([ov_recess_d,ov_recess_d,ov_recess_h + z_corr]);
+    
 }
 
-module openvlex_cover_bottom(x, y, square_basis, of_sheet_diam=11) {
-    translate([0,0,5.4])
-        cube([square_basis*x,square_basis*y,0.29]);
-}
 
-module openvlex_cover(x, y, square_basis) {
-    of_sheet_diam = 11;
-    union() {
-        openvlex_cover_topmost(x,y,square_basis,of_sheet_diam);
-        openvlex_cover_bottom(x,y,square_basis,of_sheet_diam);
-    }
-}
+// OpenVLex positive
 
-module openvlex_base(x, y, square_basis) {
-        cube([square_basis*x,square_basis*y,1.4]);
-}
-
-module openvlex_tubes(x,y,square_basis) {
-    openlock_clip_length = 19.5 + 0.1;
-    //of_tube = 5.4;
-    of_tube = (square_basis/2 - openlock_clip_length/2) * 2;
-    for ( i = [0 : x-1] ) {
-        for ( j = [0 : y-1] ) {
-            // tube:
-            translate([i*square_basis, j*square_basis,0])
-            translate([square_basis/2-of_tube/2, square_basis/2-of_tube/2, 0])
-            cube([of_tube,of_tube,6]);
-        }
-    }
+module openvlex_ground_plate(x, y, square_basis) {
+    cube([square_basis*x, square_basis*y, 1.4]);
 }
 
 module openvlex_middle_block(x,y,square_basis) {
-    //translate([10,10,0]) cube([square_basis*x-20,square_basis*y-20,6]);
-    translate([0,0,0]) cube([square_basis*x,square_basis*y,6]);
+    clip_length = (lock == "openlock" || lock == "triplex")
+                    ? 19.5
+                    : 0;     // infinitylock,  dragonlock currently not supported!
+    translate([clip_length/2, clip_length/2, 0])
+    cube([square_basis*x-clip_length,square_basis*y-clip_length,6]);
 }
 
-
-
-module openvlex_positive_cover(x,y,square_basis, edge_width) {
+module openvlex_top_cover(x,y,square_basis) {
     translate([0,0,5.4])
         cube([square_basis*x,square_basis*y,0.6]);
 }
 
-module openvlex_positive_cover2(x,y,square_basis, edge_width) {
-    translate([0,0,5.7])
-        cube([square_basis*x,square_basis*y,0.3]);
+module openvlex_magnet_shells_positive(x, y, square_basis) {
+
+    mshell_w = 11;
+    mshell_l = 10;
+    mshell_h = 6;
     
+    for ( i = [0 : y-1] ) {
+        translate([0, square_basis*(i+1)-square_basis/2-mshell_w/2, 0])
+            cube([mshell_l,mshell_w,mshell_h]);
+        translate([square_basis*x-mshell_l, square_basis*(i+1)-square_basis/2-mshell_w/2, 0])
+            cube([mshell_l,mshell_w,mshell_h]);
+    }
+    for ( i = [0 : x-1] ) {
+        translate([square_basis*(i+1)-square_basis/2-mshell_w/2, 0, 0])
+            cube([mshell_w,mshell_l,mshell_h]);
+        translate([square_basis*(i+1)-square_basis/2-mshell_w/2, square_basis*y-mshell_l, 0])
+            cube([mshell_w,mshell_l,mshell_h]);
+    }
+}
+
+module openvlex_stability_bars_positive(x, y, square_basis) {
+
+    sbar_w1 = 0.45;
+    sbar_w2 = 1.0;
+    sbar_l2 = 1.0;
+    sbar_indent = 7.2;
+    sbar_l = 19.5/2 - sbar_indent;
+    sbar_l1 = sbar_l - sbar_l2;
+    sbar_h = 6;
+    
+    for ( i = [0 : y-1] ) {
+        translate([sbar_indent, square_basis*(i+1)-square_basis/2-sbar_w2/2, 0])
+            hull() {
+                translate([0,(sbar_w2-sbar_w1)/2,0]) cube([sbar_l, sbar_w1, sbar_h]);
+                translate([sbar_l1,0,0]) cube([sbar_l2, sbar_w2, sbar_h]);
+            }
+        translate([square_basis*x-sbar_l-sbar_indent, square_basis*(i+1)-square_basis/2-sbar_w2/2, 0])
+            hull() {
+                translate([0,(sbar_w2-sbar_w1)/2,0]) cube([sbar_l, sbar_w1, sbar_h]);
+                translate([0,0,0]) cube([sbar_l2, sbar_w2, sbar_h]);
+            }
+    }
+    for ( i = [0 : x-1] ) {
+        translate([square_basis*(i+1)-square_basis/2-sbar_w2/2, sbar_indent, 0])
+            hull() {
+                translate([(sbar_w2-sbar_w1)/2,0,0]) cube([sbar_w1, sbar_l, sbar_h]);
+                translate([0,sbar_l1,0]) cube([sbar_w2, sbar_l2, sbar_h]);
+            }
+        translate([square_basis*(i+1)-square_basis/2-sbar_w2/2, square_basis*y-sbar_l-sbar_indent, 0])
+            hull() {
+                translate([(sbar_w2-sbar_w1)/2,0,0]) cube([sbar_w1, sbar_l, sbar_h]);
+                translate([0,0,0]) cube([sbar_w2, sbar_l2, sbar_h]);
+            }
+    }
+}
+
+module openvlex_positive(x, y, square_basis) {
+
+    openvlex_ground_plate(x,y,square_basis);
+    openvlex_middle_block(x,y,square_basis);
+    openvlex_top_cover(x,y,square_basis);
+    
+    if (priority != "lock" && magnet_hole > 0) {
+        openvlex_magnet_shells_positive(x,y,square_basis);
+    } else {
+        if (ov_additional_stability_bars == "true") {
+            openvlex_stability_bars_positive(x,y,square_basis);
+        }
+    }
+
+}
+
+
+// OpenVLex negative
+
+module openvlex_square_sockets_negative(x,y,square_basis) {
     for ( i = [0 : x-1] ) {
         for ( j = [0 : y-1] ) {
-            
             translate([i*square_basis, j*square_basis,0])
-            translate([square_basis/2-7.5, square_basis/2-7.5, 5.4])
-            cube([15,15,0.3]);
-            
+            translate([square_basis/2, square_basis/2,0])
+            openvlex_connector_socket();
         }
     }
-    
-    
 }
 
+module openvlex_radial_marker_arc_negative(x,y,square_basis) {
+    
+    module sector(radius, angles, fn = 24) {
+        r = radius / cos(180 / fn);
+        step = -360 / fn;
 
+        points = concat([[0, 0]],
+            [for(a = [angles[0] : step : angles[1] - 360]) 
+                [r * cos(a), r * sin(a)]
+            ],
+            [[r * cos(angles[1]), r * sin(angles[1])]]
+        );
 
-
-
-
-module openvlex_middle(x,y,square_basis, edge_width) {
-    translate([10,10,0])
-    cube([square_basis*x-20,square_basis*y-20,6]);
-}
-
-
-module of_single_column_support() {
-
-    module support() {
-        translate([0, 0, 1.2]) cube([2, 1, 4.6]);
-        hull() {
-            translate([0, 0,   1.4]) cube([2, 1,   2.1]);
-            translate([0, -.2, 1.9]) cube([2, 1.4, 1.1]);
-        }
-        hull() {
-            translate([0, 0,   3.5]) cube([2, 1,   2.1]);
-            translate([0, -.2, 4.0]) cube([2, 1.4, 1.1]);
+        difference() {
+            circle(radius, $fn = fn);
+            polygon(points);
         }
     }
 
-    if (additional_supports == "two") {
-        
-        // left
-        translate([6.2, 1.1, 0]) support();
-        
-        // right
-        translate([6.2, -2.1, 0]) support();
-        
-        
-    } else if (additional_supports == "three") {
-        
-        // left
-        translate([6.4, 2, 0]) support();
-        
-        // right
-        translate([6.4, -3, 0]) support();
+    module arc(radius, angles, width = 1, fn = 24) {
+        difference() {
+            sector(radius + width, angles, fn);
+            sector(radius, angles, fn);
+        }
+    } 
 
-        // middle
-        translate([7.4, -0.5, 0]) support();
+    z_corr = ov_part == "sockets_only" ? 0.0 : 0.1;  // make it oversized on z axis when used as negative
 
+    marking_w = 0.2;
+    marking_h = 0.13;
+
+    // 1x "marc"
+    translate([0,0,6-marking_h])
+    linear_extrude(marking_h +z_corr)
+    arc(square_basis - marking_w/2, [5,85], marking_w, fn=100);
+
+    // 2x "marc"
+    if (x > 1 && y > 1 && shape == "square" || x > 2 && y > 2) {
+        translate([0,0,6-marking_h])
+        linear_extrude(marking_h +z_corr)
+        arc(square_basis*2 - marking_w/2,
+            [x <= 2 ? 20 : 5, y <= 2 ? 70 : 85],
+            marking_w, fn=100);
     }
     
+    // 3x "marc"
+    if (x > 2 && y > 2 && shape == "square" || x > 3 && y > 3) {
+        translate([0,0,6-marking_h])
+        linear_extrude(marking_h +z_corr)
+        arc(square_basis*3 - marking_w/2,
+            [x <= 3 ? 20 : 5, y <= 3 ? 70 : 85],
+            marking_w, fn=100);
+    }
+    
+    // 4x "marc"
+    if (x > 3 && y > 3 && shape == "square" || x > 4 && y > 4) {
+        translate([0,0,6-marking_h])
+        linear_extrude(marking_h +z_corr)
+        arc(square_basis*4 - marking_w/2,
+            [x <= 4 ? 20 : 5, y <= 4 ? 70 : 85],
+            marking_w, fn=100);
+    }
+    
+    // 5x "marc"
+    if (x > 4 && y > 4) {
+        translate([0,0,6-marking_h])
+        linear_extrude(marking_h +z_corr)
+        arc(square_basis*5 - marking_w/2,
+            [x <= 5 ? 20 : 5, y <= 5 ? 70 : 85],
+            marking_w, fn=100);
+    } else if (x == 4 && y == 4 && shape == "square") {
+        translate([0,0,6-marking_h])
+        linear_extrude(marking_h +z_corr)
+        arc(square_basis*5 - marking_w/2,
+            [40, 50],
+            marking_w, fn=100);
+    }
 }
 
+module openvlex_radial_sockets_negative(x,y,square_basis) {
 
+    function sagita(r, s) = r - sqrt (4*r*r - s*s) / 2;
 
+    jack_size = 4;
+    socket_size = 11.0; // diameter of top recess for the jack's plate
+    min_corner_dist = 19.0;
 
-module of_additional_column_supports(x,y,square_basis) {
-    for ( i = [0 : y-1] ) {
-        translate([0,square_basis*(i+1)-square_basis/2,0])
-            of_single_column_support();
-        translate([square_basis*x,square_basis*(i+1)-square_basis/2,0])
-            rotate([0,0,180]) of_single_column_support();
+    assert(x == y, "Radial OpenVLex connectors only supported for equal width and length");
+
+    //echo(square_basis - socket_size/2 - sagita(square_basis, socket_size));
+
+    // 1x inner circle
+    rotate([0,0,45])
+    translate([min_corner_dist, 0, 0])
+    openvlex_connector_socket();
+
+    // 2x belt
+    if (x > 1) {
+        rotate([0,0,45/2])
+        translate([square_basis + square_basis/2, 0, 0])
+        openvlex_connector_socket();
     }
-    for ( i = [0 : x-1] ) {
-        translate([square_basis*(i+1)-square_basis/2,0,0])
-            rotate([0,0,90]) of_single_column_support();
-        translate([square_basis*(i+1)-square_basis/2,square_basis*y,0])
-            rotate([0,0,-90]) of_single_column_support();
+    if (y > 1) {
+        rotate([0,0,45/2+45])
+        translate([square_basis + square_basis/2, 0, 0])
+        openvlex_connector_socket();
     }
-}
 
+    // 2x concave floor part
+    if (x == 2 && y == 2 && shape == "square") {
+        
+        echo(square_basis*2 + jack_size/2 + sagita(square_basis*2, jack_size));
+        echo(sqrt(2 * square_basis*2*square_basis*2) - min_corner_dist);
+        
+        rotate([0,0,45])
+//        translate([square_basis*2 + jack_size/2 + sagita(square_basis*2, jack_size), 0, 0])
+        translate([sqrt(2 * square_basis*2*square_basis*2) - min_corner_dist, 0, 0])
+        openvlex_connector_socket();
+    }
 
-
-
-module openvlex_supports(x,y,square_basis,support_h) {
-     
-    cube([square_basis/2+4.75,square_basis/2+4.75,support_h]);
-    
-    translate([square_basis*x-square_basis/2-4.75,0,0])
-    cube([square_basis/2+4.75,square_basis/2+4.75,support_h]);
-    
-    translate([0,square_basis*y-square_basis/2-4.75,0])
-    cube([square_basis/2+4.75,square_basis/2+4.75,support_h]);
-    
-    translate([square_basis*x-square_basis/2-4.75,square_basis*y-square_basis/2-4.75,0])
-    cube([square_basis/2+4.75,square_basis/2+4.75,support_h]);
-    
+    // 3x belt
     if (x > 2) {
-        for ( i = [2 : x-1] ) {
-            translate([(i-.5)*square_basis-9.5/2,0,0])
-            cube([9.5,square_basis/2+4.75,support_h]);
-            
-            translate([(i-.5)*square_basis-9.5/2,square_basis*y-square_basis/2-4.75,0])
-            cube([9.5,square_basis/2+4.75,support_h]);
-        }
+        rotate([0,0,45/4])
+        translate([square_basis*2 + square_basis/2, 0, 0])
+        openvlex_connector_socket();
+
+        rotate([0,0,45/4 * 3])
+        translate([square_basis*2 + square_basis/2, 0, 0])
+        openvlex_connector_socket();
     }
     if (y > 2) {
-        for ( i = [2 : y-1] ) {
-            translate([0,(i-.5)*square_basis-9.5/2,0])
-            cube([square_basis/2+4.75,9.5,support_h]);
-            
-            translate([square_basis*x-square_basis/2-4.75,(i-.5)*square_basis-9.5/2,0])
-            cube([square_basis/2+4.75,9.5,support_h]);
-        }
+        rotate([0,0,45/4 * 5])
+        translate([square_basis*2 + square_basis/2, 0, 0])
+        openvlex_connector_socket();
+
+        rotate([0,0,45/4 * 7])
+        translate([square_basis*2 + square_basis/2, 0, 0])
+        openvlex_connector_socket();
+    }
+
+    // 3x concave floor part
+    if (x == 3 && y == 3 && shape == "square") {
+        rotate([0,0,45])
+        translate([sqrt(2 * square_basis*3*square_basis*3) - min_corner_dist, 0, 0])
+        openvlex_connector_socket();
+    }
+
+    // 4x belt
+    if (x > 3) {
+        rotate([0,0,45/4])
+        translate([square_basis*3 + square_basis/2, 0, 0])
+        openvlex_connector_socket();
+
+        rotate([0,0,45/4 * 3])
+        translate([square_basis*3 + square_basis/2, 0, 0])
+        openvlex_connector_socket();
+    }
+    if (y > 3) {
+        rotate([0,0,45/4 * 5])
+        translate([square_basis*3 + square_basis/2, 0, 0])
+        openvlex_connector_socket();
+
+        rotate([0,0,45/4 * 7])
+        translate([square_basis*3 + square_basis/2, 0, 0])
+        openvlex_connector_socket();
     }
     
-    of_additional_column_supports(x,y,square_basis);
+    // 4x concave floor part
+    if (x == 4 && y == 4 && shape == "square") {
+        rotate([0,0,45/24*19])
+        translate([square_basis*4 + socket_size/2 + sagita(square_basis*4, socket_size), 0, 0])
+        openvlex_connector_socket();
+
+        rotate([0,0,45])
+        translate([sqrt(2 * square_basis*4*square_basis*4) - min_corner_dist, 0, 0])
+        openvlex_connector_socket();
+
+        rotate([0,0,45/24*29])
+        translate([square_basis*4 + socket_size/2 + sagita(square_basis*4, socket_size), 0, 0])
+        openvlex_connector_socket();
+
+    }
 }
 
+module openvlex_sockets_negative(x,y,square_basis) {
+    if (ov_feature == "square") {
+        openvlex_square_sockets_negative(x,y,square_basis);
+    } else if (ov_feature == "radial") {
+        if (shape == "square") {
+            openvlex_radial_marker_arc_negative(x,y,square_basis);
+        }
+        openvlex_radial_sockets_negative(x,y,square_basis);
+    }
+}
 
-
-
-module openvlex_hole(x,y,square_basis) {
+module openvlex_pegs_cavity_negative(x,y,square_basis) {
     
-    // diameters bottom to top:
-    of_bw_d = 4.8;      // bottom widening diameter
-    of_bw_y = 1.2;      // bottom widening y
-    of_bw_h = 0.3;      // bottom widening height
-
-    of_hole_d = 3.8;    // OpenVLex hole diameter
-
-    of_tw_d = 5.0;      // top widening diameter
-    of_tw_y = 3.4;      // top widening y
-    of_tw_h = 2.3;      // top widening height
+    module pegs_cavity() {
+        translate([6, -8, -0.1]) cube([4.7, 8*2, 5.4 + 0.1]);
+    }
     
+    if (y > 1) {
+        for ( i = [1 : y-1] ) {
+            translate([0,square_basis*i,0]) pegs_cavity();
+            translate([square_basis*x,square_basis*i,0]) rotate([0,0,180]) pegs_cavity();
+        }
+    }
+    if (x > 1) {
+        for ( i = [1 : x-1] ) {
+            translate([square_basis*i,0,0]) rotate([0,0,90]) pegs_cavity();
+            translate([square_basis*i,square_basis*y,0]) rotate([0,0,-90]) pegs_cavity();
+        }
+    }
+}
+
+module openvlex_magnet_negative() {
+    translate([magnet_hole/2+1,0,0.6]) cylinder(5.1,magnet_hole/2,magnet_hole/2, $fn=100);
+    translate([magnet_hole/2+1,0,-0.1]) cylinder(1,.9,.9,$fn=50);
+}
+
+module openvlex_magnets_negative(x,y,square_basis) {
+    for ( i = [0 : y-1] ) {
+            translate([0,square_basis*(i+1)-square_basis/2,0]) openvlex_magnet_negative();
+            translate([square_basis*x,square_basis*(i+1)-square_basis/2,0]) rotate([0,0,180]) openvlex_magnet_negative();
+    }
     for ( i = [0 : x-1] ) {
-        for ( j = [0 : y-1] ) {
-            
-            // bottom widening:
+            translate([square_basis*(i+1)-square_basis/2,0,0]) rotate([0,0,90]) openvlex_magnet_negative();
+            translate([square_basis*(i+1)-square_basis/2,square_basis*y,0]) rotate([0,0,-90]) openvlex_magnet_negative();
+    }
+}
 
-            translate([i*square_basis, j*square_basis,0])
-            translate([square_basis/2-of_bw_d/2, square_basis/2-of_bw_d/2, -0.1])
-            hull() {
-               translate([(of_bw_d-of_hole_d)/2,(of_bw_d-of_hole_d)/2, of_bw_h + of_bw_y + 0.1])
-                  cube([of_hole_d,of_hole_d,0.01]);
-               cube([of_bw_d,of_bw_d, of_bw_y +0.1]);
-            }
+module openvlex_magnetic_lower_filter(x,y,square_basis) {
+    // cut away upper part:
+    translate([-0.1,-0.1,0.6])
+        cube([square_basis*x+0.2,square_basis*y+0.2,5.4 +0.1]);
+    // make it a little bit smaller:
+    of_ml_inset = 0.2;
+    translate([-0.1, -4 + of_ml_inset, -0.1])
+        cube([square_basis*x+0.2, 4, 1.2]);
+    translate([-0.1, square_basis*y - of_ml_inset, -0.1])
+        cube([square_basis*x+0.2, 4, 1.2]);
+    
+    translate([-4 + of_ml_inset, -0.1, -0.1])
+        cube([4, square_basis*y+0.2, 1.2]);
+    translate([square_basis*x - of_ml_inset, -0.1, -0.1])
+        cube([4, square_basis*y+0.2, 1.2]);
+}
 
-            // plug hole:
-            
-            translate([i*square_basis, j*square_basis,0])
-            translate([square_basis/2-of_hole_d/2, square_basis/2-of_hole_d/2, -0.1])
-            cube([of_hole_d,of_hole_d,6 +0.2]);
-            
-            // top widening:
-            
-            translate([i*square_basis,j*square_basis,0])
-            translate([square_basis/2-of_tw_d/2, square_basis/2-of_tw_d/2, of_tw_y])
-            hull() {
-               translate([0,0,of_tw_h])
-                  cube([of_tw_d,of_tw_d,9]);
-               translate([(of_tw_d-of_hole_d)/2,(of_tw_d-of_hole_d)/2,0])
-                  cube([of_hole_d,of_hole_d,0.01]);
-            }
-            
-            // flat lowered area for the plug sheet:
-            
-            translate([i*square_basis, j*square_basis,0])
-            translate([square_basis/2-5.5, square_basis/2-5.5, 5.7])
-            cube([11,11,0.4]);
-            
-        }
+module openvlex_magnetic_upper_filter(x,y,square_basis) {
+    // cut away lower part:
+    translate([-0.1,-0.1,-0.1])
+        cube([square_basis*x+0.2,square_basis*y+0.2,0.61 +0.1]);
+}
+
+module openvlex_square_negative(x,y,square_basis) {
+    openvlex_sockets_negative(x,y,square_basis);
+    openvlex_pegs_cavity_negative(x,y,square_basis);
+    
+    if (magnet_hole != 0) {
+        openvlex_magnets_negative(x,y,square_basis) ;
+    }
+    
+    if (ov_part == "lower") {
+        openvlex_magnetic_lower_filter(x,y,square_basis);
+    } else if (ov_part == "upper") {
+        openvlex_magnetic_upper_filter(x,y,square_basis);
     }
     
 }
 
-module openvlex_negative(x,y,square_basis, shape, edge_width) {
+module openvlex_negative(x,y,square_basis) {
     if(shape == "square") {
-        openvlex_hole(x,y,square_basis);
+        openvlex_square_negative(x,y,square_basis);
     } else if (shape == "curved") {
         echo("Curved does not support OpenVLex");
     } else if (shape == "curvedlarge.a") {
@@ -1598,44 +1778,75 @@ module openvlex_negative(x,y,square_basis, shape, edge_width) {
     }
 }
 
-module openvlex_magnet_negative(magnet_hole=5.5) {
-    if (magnet_hole > 0) {
-        translate([magnet_hole/2+1,0,0.6]) cylinder(5.1,magnet_hole/2,magnet_hole/2, $fn=100);
-        translate([magnet_hole/2+1,0,-0.1]) cylinder(1,.9,.9,$fn=50);
-    }
-}
 
-module openvlex_magnets_negative(x,y,square_basis,edge_width,magnet_hole,lock,priority) {
-    for ( i = [0 : y-1] ) {
-            translate([0,square_basis*(i+1)-square_basis/2,0]) openvlex_magnet_negative(magnet_hole);
-            translate([square_basis*x,square_basis*(i+1)-square_basis/2,0]) rotate([0,0,180]) openvlex_magnet_negative(magnet_hole);
-    }
-    for ( i = [0 : x-1] ) {
-            translate([square_basis*(i+1)-square_basis/2,0,0]) rotate([0,0,90]) openvlex_magnet_negative(magnet_hole);
-            translate([square_basis*(i+1)-square_basis/2,square_basis*y,0]) rotate([0,0,-90]) openvlex_magnet_negative(magnet_hole);
-    }
-}
 
-module openvlex_chambers(x,y,square_basis) {
-    
-    module openvlex_chamber() {
-        translate([6, -8, -0.1]) cube([4.7, 8*2, 5.4 + 0.1]);
-    }
-    
-    if (y > 1) {
-        for ( i = [1 : y-1] ) {
-            translate([0,square_basis*i,0]) openvlex_chamber();
-            translate([square_basis*x,square_basis*i,0]) rotate([0,0,180]) openvlex_chamber();
-        }
-    }
-    if (x > 1) {
-        for ( i = [1 : x-1] ) {
-            translate([square_basis*i,0,0]) rotate([0,0,90]) openvlex_chamber();
-            translate([square_basis*i,square_basis*y,0]) rotate([0,0,-90]) openvlex_chamber();
-        }
-    }
-    
-}
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//module ov_single_column_support() {
+//
+//    module support() {
+//        translate([0, 0, 1.2]) cube([2, 1, 4.6]);
+//        hull() {
+//            translate([0, 0,   1.4]) cube([2, 1,   2.1]);
+//            translate([0, -.2, 1.9]) cube([2, 1.4, 1.1]);
+//        }
+//        hull() {
+//            translate([0, 0,   3.5]) cube([2, 1,   2.1]);
+//            translate([0, -.2, 4.0]) cube([2, 1.4, 1.1]);
+//        }
+//    }
+//
+//    if (ov_additional_supports == "two") {
+//        
+//        // left
+//        translate([6.2, 1.1, 0]) support();
+//        
+//        // right
+//        translate([6.2, -2.1, 0]) support();
+//        
+//        
+//    } else if (ov_additional_supports == "three") {
+//        
+//        // left
+//        translate([6.4, 2, 0]) support();
+//        
+//        // right
+//        translate([6.4, -3, 0]) support();
+//
+//        // middle
+//        translate([7.4, -0.5, 0]) support();
+//
+//    }
+//    
+//}
+//
+//module ov_additional_column_supports(x,y,square_basis) {
+//    for ( i = [0 : y-1] ) {
+//        translate([0,square_basis*(i+1)-square_basis/2,0])
+//            ov_single_column_support();
+//        translate([square_basis*x,square_basis*(i+1)-square_basis/2,0])
+//            rotate([0,0,180]) ov_single_column_support();
+//    }
+//    for ( i = [0 : x-1] ) {
+//        translate([square_basis*(i+1)-square_basis/2,0,0])
+//            rotate([0,0,90]) of_single_column_support();
+//        translate([square_basis*(i+1)-square_basis/2,square_basis*y,0])
+//            rotate([0,0,-90]) of_single_column_support();
+//    }
+//}
+
+
 
 
 
@@ -1648,7 +1859,7 @@ module openvlex_chambers(x,y,square_basis) {
  * Top Level Function
  */
 module base(x,y,square_basis,
-        shape="square",magnet_hole=6,lock="false",priority="magnets",dynamic_floors="false",curvedconcave="false",openvlex="false") {
+        shape="square",magnet_hole=6,lock="false",priority="magnets",dynamic_floors="false",curvedconcave="false") {
     df = dynamic_floors == "true" ? true : false;
     edge_width = magnet_hole >= 5.55 ? magnet_hole + 1 : 6.55;
 
@@ -1656,61 +1867,30 @@ module base(x,y,square_basis,
     difference() {
         union() {
             difference() {
+                
                 union() {
                     plain_base(x,y,square_basis,lock,shape,edge_width);
                     if(df) {
                         df_positive(x,y,square_basis,shape,edge_width);
                     }
-                    if (openvlex != "none") {
-                        openvlex_base(x,y,square_basis);
-                        openvlex_middle_block(x,y,square_basis);
-                        openvlex_supports(x,y,square_basis,6);
-                    }
                     connector_positive(x,y,square_basis,shape,edge_width,magnet_hole,lock,priority) ;
                 }
+                
                 if(df) {
                     df_negative(x,y,square_basis, shape, edge_width);
                 }
                 connector_negative(x,y,square_basis,shape,edge_width,magnet_hole,lock,priority) ;
             }
-            if (openvlex != "none") {
-                openvlex_cover(x,y,square_basis);
-                openvlex_tubes(x,y,square_basis);
-                if (priority == "lock" || magnet_hole == 0) {
-                    openvlex_supports(x,y,square_basis,1.4);
-                }
+
+            if (ov_feature != "none") {
+                openvlex_positive(x,y,square_basis);
             }
         }
-        if (openvlex != "none") {
-            openvlex_negative(x,y,square_basis,shape,edge_width);
-            openvlex_chambers(x,y,square_basis);
-            
-            if (magnet_hole != 0) {
-                openvlex_magnets_negative(x,y,square_basis,edge_width,magnet_hole,lock,priority) ;
-            }
-            
-            if (openvlex == "magnetic_lower") {
-                // cut away upper part:
-                translate([-0.1,-0.1,0.6])
-                    cube([square_basis*x+0.2,square_basis*y+0.2,5.4 +0.1]);
-                // make it a little bit smaller:
-                of_ml_inset = 0.2;
-                translate([-0.1, -4 + of_ml_inset, -0.1])
-                    cube([square_basis*x+0.2, 4, 1.2]);
-                translate([-0.1, square_basis*y - of_ml_inset, -0.1])
-                    cube([square_basis*x+0.2, 4, 1.2]);
-                
-                translate([-4 + of_ml_inset, -0.1, -0.1])
-                    cube([4, square_basis*y+0.2, 1.2]);
-                translate([square_basis*x - of_ml_inset, -0.1, -0.1])
-                    cube([4, square_basis*y+0.2, 1.2]);
-                
-            } else if (openvlex == "magnetic_upper") {
-                // cut away lower part:
-                translate([-0.1,-0.1,-0.1])
-                    cube([square_basis*x+0.2,square_basis*y+0.2,0.61 +0.1]);
-            }
+
+        if (ov_feature != "none") {
+            openvlex_negative(x,y,square_basis);
         }
+        
     }
 
     
@@ -1739,10 +1919,33 @@ ext_south = external_south == "true";
 ext_east = external_east == "true";
 ext_west = external_west == "true";
 
-if(lock == "infinitylock" && !valid_infinitylock_basis) {
-    echo("ERROR: infinitylock is only compatible with inch basis");
+if (ov_part == "sockets_only") {
+
+    color("red") 
+    openvlex_sockets_negative(x,y,square_basis_number);
+
+    if (ov_feature == "radial") {
+        // draw a border for easier aligning with custom tiles:
+        color("grey") 
+//        difference() {
+//            translate([-11,-11,0])
+//                cube([x*square_basis_number+22,y*square_basis_number+22,6]);
+//            translate([-10,-10,-0.1])
+//                cube([x*square_basis_number+20,y*square_basis_number+20,6.2]);
+//        }
+        translate([0,0,-100.0])
+            cube([x*square_basis_number,y*square_basis_number,0.01]);
+    }
+    
 } else {
-    color("Grey") base(x,y,square_basis_number,shape=shape,magnet_hole=magnet_hole,lock=lock,priority=priority,dynamic_floors=dynamic_floors,openvlex=openvlex);
+
+    if(lock == "infinitylock" && !valid_infinitylock_basis) {
+        echo("ERROR: infinitylock is only compatible with inch basis");
+    } else {
+        color("Grey") base(x,y,square_basis_number,shape=shape,magnet_hole=magnet_hole,lock=lock,priority=priority,dynamic_floors=dynamic_floors);
+    }
+    
 }
+
 
 //plain_base(x,y,square_basis_number,shape,7);
