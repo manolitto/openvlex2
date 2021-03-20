@@ -36,16 +36,15 @@ There are (currently) three OpenVLex base variants:
 Print and postprocess similar to OpenForge bases.
 Use flat-nose pliers to remove the supports. Be careful not to accidentally remove the OpenLOCK bars.
 
-> **Note:** With cheap PLA and/or with some printers it may be necessary to use bases with additional supports. If you see ugly holes on the top, you can either try to adjust your printer configuration to improve bridging (different PLA, hotend temperature, bridging speed, 0.10 mm layer height) or use the bases with additional supports - see below.
+> **Note:** With cheap PLA and/or with some printers it may be necessary to use bases with additional supports. If you see ugly holes on the top, you can either try to adjust your printer configuration to improve bridging (different PLA, hotend temperature, bridging speed, 0.10 mm layer height) or use the bases with additional braces - see below.
 
 
-### Triplex Bases (with additional supports)
+### Triplex Bases (braced)
 
 Alternative bases that can be used if you have difficulties with bridging and see holes on the surface of your triplex base.
 
-> **Note:** Be extra careful when removing the supports. There are four support bars per connector opening: Two identical to the standard triplex and two directly behind them deeper inside.
-
-> **Important:** **Do not mistake the supports with the OpenLOCK bars!**
+> **Note:** These bases have additional tiny bars at the back wall of the triplex openings. They are not meant as
+> printing support, they are small enough to not interfere with the OpenLOCK clip, and you do **NOT** need to remove them.
 
 
 ### Printing Notes
