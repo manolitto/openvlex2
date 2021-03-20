@@ -1,6 +1,9 @@
-
+.idea
 *.iml
 *.3mf
 .DS_Store
 TODO.md
 bases/_archive/*
+_old
+_test
+_out
