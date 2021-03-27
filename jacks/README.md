@@ -1,11 +1,19 @@
 # OpenVLex Jacks
 
 
-
 ## About
 
 OpenVLex jacks are glued to the underside of "wall on tile" floor or wall tiles. Attach one jack per inch grid field. There is a printable stencil that makes gluing much easier and faster. See [gluing instructions](#gluing-instructions) below.
 
+## Instructions
+
+There are three slighty different variants of jacks:
+
+- **normal** (5.9 mm) - try first
+- **tight** (5.8 mm)
+- **tighter** (5.7 mm) 
+
+The jack variants only differ in their length. To optimize your vertical tile to base locking experience (which depends on your printer and material), try out different lengths and use the one that fits best.
 
 ### Printing Notes for OpenVLex Jacks
 
@@ -31,7 +39,7 @@ The jacks are quite small parts, so the most important issue is the adhesion of 
 
 
 
-## Gluing Instructions
+### Gluing Instructions
 
 - The recommended way to glue OpenVLex jacks to your tiles is to use one of the [gluing stencils](../gluing_stencils/README.md). However, for just trying out and testing OpenVLex you do not need a stencil yet, just use an already printed OpenVLex base as a stencil.  
   
@@ -50,7 +58,7 @@ The jacks are quite small parts, so the most important issue is the adhesion of 
 
 ## Remix your own risers and stairs
 
-Use the attached [OpenVLex Connector Negative](openvlex_connector_negative_v2.13.stl) as a negative stamp if you want to kitbash tiles to have sockets:
+Use one of the attached OpenVLex Connector Negatives as a negative stamp if you want to kitbash tiles to have sockets:
 
 - vertically align connector negative tops to the top of your piece
 
