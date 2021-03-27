@@ -1708,8 +1708,18 @@ module openvlex_pegs_cavity_negative(x,y,square_basis) {
 }
 
 module openvlex_magnet_negative() {
-    translate([magnet_hole/2+1,0,0.6]) cylinder(5.1,magnet_hole/2,magnet_hole/2, $fn=100);
-    translate([magnet_hole/2+1,0,-0.1]) cylinder(1,.9,.9,$fn=50);
+    h_top = 0.3;
+    h_bottom = 0.6;
+    h_middle = 6.0 - 0.3 - h_top - h_bottom;
+    
+    hull() {
+        // smaller top hole
+        translate([magnet_hole/2+1,0, h_bottom+h_middle]) cylinder(h_top, 1.8, 1.8, $fn=30);
+        // main hole    
+        translate([magnet_hole/2+1,0, h_bottom]) cylinder(h_middle, magnet_hole/2,magnet_hole/2, $fn=60);
+    }
+    // bottom tiny hole
+    translate([magnet_hole/2+1,0,-0.1]) cylinder(h_bottom+0.2,.9,.9,$fn=30);
 }
 
 module openvlex_magnets_negative(x,y,square_basis) {
@@ -1925,14 +1935,8 @@ if (ov_part == "sockets_only") {
     openvlex_sockets_negative(x,y,square_basis_number);
 
     if (ov_feature == "radial") {
-        // draw a border for easier aligning with custom tiles:
+        // draw a block below for easier aligning with custom tiles:
         color("grey") 
-//        difference() {
-//            translate([-11,-11,0])
-//                cube([x*square_basis_number+22,y*square_basis_number+22,6]);
-//            translate([-10,-10,-0.1])
-//                cube([x*square_basis_number+20,y*square_basis_number+20,6.2]);
-//        }
         translate([0,0,-100.0])
             cube([x*square_basis_number,y*square_basis_number,0.01]);
     }
