@@ -116,6 +116,9 @@ If you are either not yet convinced or already eager to learn more about the pos
 
 - Print some **[OpenVLex Riser and Stair remixes](stairs_and_risers/)**, apply OpenVLex jacks and enjoy stacking and plugging the pieces together to build stairs and platforms in endless variety.
 
+  ![Spiral Staircase](img/stairs/IMG_20210401_232619.jpg)
+  ![Tower Staircase](img/stairs/IMG_20210401_231948.jpg)
+
 - Print a bunch of 1x1 floor tiles of different styles (e.g. Dwarven Plain and Knotwork) and enjoy building **mosaics and patterned floor** tiles in endless variety.
 
 - Build amazing dungeons and houses. Have fun! :star_struck:
