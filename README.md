@@ -114,8 +114,12 @@ If you are either not yet convinced or already eager to learn more about the pos
   ![Corners](img/img007.jpg)  
   ![Doors](img/img008.jpg)
 
-- Print some **[OpenVLex Riser and Stair remixes](stairs_and_risers/)**, apply OpenVLex jacks and enjoy stacking and plugging the pieces together to build stairs and platforms in endless variety.
+- Print some **[OpenVLex Riser and Stair remixes](stairs_and_risers/)**, apply OpenVLex jacks ...
 
+  ![Disassembled Staircase](img/img017.jpg)
+  
+  ... and enjoy stacking and plugging the pieces together to build stairs and platforms in endless variety.
+  
   ![Spiral Staircase](img/img015.jpg)
   ![Tower Staircase](img/img014.jpg)
 
