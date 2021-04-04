@@ -160,6 +160,29 @@
             "topless": "false",
             "x": "2",
             "y": "2"
+        },
+        "dragonlock": {
+            "curvedconcave": "false",
+            "curvedsquare": "false",
+            "dynamic_floors": "false",
+            "external_east": "false",
+            "external_north": "false",
+            "external_south": "false",
+            "external_west": "false",
+            "lock": "dragonlock",
+            "magnet_hole": "0",
+            "notch": "false",
+            "notch_x": "2",
+            "notch_y": "2",
+            "ov_additional_stability_bars": "false",
+            "ov_part": "all",
+            "ov_sockets": "square",
+            "priority": "magnets",
+            "shape": "square",
+            "square_basis": "inch",
+            "topless": "false",
+            "x": "2",
+            "y": "2"
         }
     },
     "fileFormatVersion": "1"
