@@ -7,14 +7,21 @@
 OpenVLex bases can be used as universal bases for all your "wall on tile" terrain pieces. They can be used side by side with all your existing and your "separate wall" OpenForge and OpenLOCK tiles.
 
 
-### Variants
+### Locking Systems: OpenLOCK, Triplex, Dragonlock
 
-There are (currently) three OpenVLex base variants:
+OpenVLex currently supports three different locking variants:
 
 - magnetic.openlock
-- triplex
-- triplex.braced (with additional supports)
+- triplex (or triplex.braced with additional supports)
 - dragonlock (early state - proof of concept)
+
+### Geometry: square vs radial
+
+Most of the time you will need bases with "square" geometry. When it comes to **curved** floors, stairs, or risers you should switch to "radial" bases.
+
+### Style
+
+In addition to "plain" bases there are plans to add corner and edge bases in different styles. "Dungeon Stone" is the first supported OpenVLex base style. 
 
 
 ## Instructions
