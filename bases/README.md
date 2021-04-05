@@ -13,8 +13,8 @@ There are (currently) three OpenVLex base variants:
 
 - magnetic.openlock
 - triplex
-- triplex (with additional supports)
-
+- triplex.braced (with additional supports)
+- dragonlock (early state - proof of concept)
 
 
 ## Instructions
