@@ -77,7 +77,7 @@ To give you an idea of how OpenVLex works and the advantages it offers, you can 
    ![Glue jacks to floor parts](img/img002.jpg)  
    ![Finished floor parts](img/img003.jpg)
 
-6. Print out some **[OpenVLex Triplex bases](bases/triplex.openvlex/)** in the sizes you want. For now, print only one of each of your preferred sizes from the following list: 1x1, 2x1, 2x2, 3x2, 3x3, 4x1, 4x2, 4x3, 5x1, 5x2, 6x1, 6x2, 7x1, 8x1.  
+6. Print out some **[OpenVLex Triplex bases](bases/plain/triplex/)** in the sizes you want. For now, print only one of each of your preferred sizes from the following list: 1x1, 2x1, 2x2, 3x2, 3x3, 4x1, 4x2, 4x3, 5x1, 5x2, 6x1, 6x2, 7x1, 8x1.  
    See [printing instructions for bases](bases/README.md).  
    > **Printing times:** 1x1 = ~20 mins, 2x2 = ~1 hour, 7x1 = ~2 hours
    
@@ -104,7 +104,7 @@ If you are either not yet convinced or already eager to learn more about the pos
   
   ![Other floor styles](img/img012.jpg)
 
-- Print out some **[OpenVLex Magnetic bases](bases/magnetic.openlock.openvlex/)** (see [instructions](bases/README.md)) and use them as alternative bases for situations and scenes where you need more flexibility during play sessions.  
+- Print out some **[OpenVLex Magnetic bases](bases/plain/magnetic.openlock/)** (see [instructions](bases/README.md)) and use them as alternative bases for situations and scenes where you need more flexibility during play sessions.  
      
   ![OpenVLex Magnetic bases](img/img006.jpg)
 
