@@ -7,6 +7,8 @@
 Stencils for easier and more accurate gluing of OpenVLex jacks onto the underside of tiles.
 
 
+   ![Gluing Stencil](../img/img002.jpg) 
+
 
 ## Instructions
 
