@@ -7,6 +7,8 @@
 OpenVLex stairs and risers can be stacked and combined in endless variations.
 
   ![Crazy Risers and Stairs](../img/img016.jpg)
+  ![Spiral Staircase](../img/img015.jpg)
+  ![Tower Staircase](../img/img014.jpg)
 
 ### Variants
 
