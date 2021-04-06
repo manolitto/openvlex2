@@ -1345,7 +1345,7 @@ module plain_alcove(x,y,square_basis,lock,edge_width) {
 
 module openvlex_socket_impl(recess=true) {
     
-    z_corr = ov_part == "sockets_only" ? 0.0 : 0.1;  // make it oversized on z axis when used as negative
+    z_corr = ov_part == "sockets_only" || ov_part == "bottom_sockets" ? 0.0 : 0.1;  // make it oversized on z axis when used as negative
     
     // diameters bottom to top:
     ov_bw_d = 4.8;      // bottom widening diameter
