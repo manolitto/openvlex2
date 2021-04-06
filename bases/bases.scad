@@ -70,7 +70,7 @@ ov_sockets = "none"; // [none, square, radial]
 
 /* [OpenVLex Magnetic Part] */
 // Which part to render for magnetic OpenVLex
-ov_part = "all"; // [all, upper, lower, sockets_only]
+ov_part = "all"; // [all, upper, lower, sockets_only, bottom_sockets]
 
 /* [OpenVLex Additional Supports] */
 // Add additional supports? (Recommended for OpenVLex triplex)
@@ -1343,7 +1343,7 @@ module plain_alcove(x,y,square_basis,lock,edge_width) {
 
 // OpenVLex socket
 
-module openvlex_connector_socket() {
+module openvlex_socket_impl(recess=true) {
     
     z_corr = ov_part == "sockets_only" ? 0.0 : 0.1;  // make it oversized on z axis when used as negative
     
@@ -1384,11 +1384,31 @@ module openvlex_connector_socket() {
           cube([ov_hole_d, ov_hole_d, 0.01]);
     }
     
-    // flat recess for the jack's plate:
-    color("green") translate([-ov_recess_d/2, -ov_recess_d/2, ov_recess_z])
-    cube([ov_recess_d,ov_recess_d,ov_recess_h + z_corr]);
+    if (recess) {
+        // flat recess for the jack's plate:
+        color("green") translate([-ov_recess_d/2, -ov_recess_d/2, ov_recess_z])
+        cube([ov_recess_d,ov_recess_d,ov_recess_h + z_corr]);
+    }
     
 }
+
+module openvlex_top_socket() {
+    openvlex_socket_impl(recess=true);
+}
+
+module openvlex_bottom_socket() {
+    translate([0,0,6]) rotate([180,0,0]) 
+    openvlex_socket_impl(recess=false);
+}
+
+module openvlex_connector_socket(top=true) {
+    if (top) {
+        openvlex_top_socket();
+    } else {
+        openvlex_bottom_socket();
+    }
+}
+
 
 
 // OpenVLex positive
@@ -1548,7 +1568,7 @@ function is_ov_socket_inside_curve(x,y,square_basis,i,j)
                       i*square_basis + square_basis/2 + 11/2,
                       j*square_basis + square_basis/2 + 11/2);
 
-module openvlex_square_sockets_negative(x,y,square_basis) {
+module openvlex_square_sockets_negative(x,y,square_basis, top=true) {
     
     for ( i = [0 : x-1] ) {
         for ( j = [0 : y-1] ) {
@@ -1556,19 +1576,19 @@ module openvlex_square_sockets_negative(x,y,square_basis) {
                 if (is_ov_socket_inside_curve(x,y,square_basis,i,j)) {
                     translate([i*square_basis, j*square_basis,0])
                     translate([square_basis/2, square_basis/2,0])
-                    openvlex_connector_socket();
+                    openvlex_connector_socket(top);
                 }
             } else {
                 translate([i*square_basis, j*square_basis,0])
                 translate([square_basis/2, square_basis/2,0])
-                openvlex_connector_socket();
+                openvlex_connector_socket(top);
             }
             
         }
     }
 }
 
-module openvlex_radial_marker_arc_negative(x,y,square_basis) {
+module openvlex_radial_marker_arc_negative(x,y,square_basis, top=true) {
     
     module sector(radius, angles, fn = 24) {
         r = radius / cos(180 / fn);
@@ -1598,15 +1618,16 @@ module openvlex_radial_marker_arc_negative(x,y,square_basis) {
 
     marking_w = 0.2;
     marking_h = 0.13;
+    h = top == true ? 6-marking_h : 0;
 
     // 1x "marc"
-    translate([0,0,6-marking_h])
+    translate([0,0,h])
     linear_extrude(marking_h +z_corr)
     arc(square_basis - marking_w/2, [5,85], marking_w, fn=100);
 
     // 2x "marc"
     if (x > 1 && y > 1 && shape == "square" || x > 2 && y > 2) {
-        translate([0,0,6-marking_h])
+        translate([0,0,h])
         linear_extrude(marking_h +z_corr)
         arc(square_basis*2 - marking_w/2,
             [x <= 2 ? 20 : 5, y <= 2 ? 70 : 85],
@@ -1615,7 +1636,7 @@ module openvlex_radial_marker_arc_negative(x,y,square_basis) {
     
     // 3x "marc"
     if (x > 2 && y > 2 && shape == "square" || x > 3 && y > 3) {
-        translate([0,0,6-marking_h])
+        translate([0,0,h])
         linear_extrude(marking_h +z_corr)
         arc(square_basis*3 - marking_w/2,
             [x <= 3 ? 20 : 5, y <= 3 ? 70 : 85],
@@ -1624,7 +1645,7 @@ module openvlex_radial_marker_arc_negative(x,y,square_basis) {
     
     // 4x "marc"
     if (x > 3 && y > 3 && shape == "square" || x > 4 && y > 4) {
-        translate([0,0,6-marking_h])
+        translate([0,0,h])
         linear_extrude(marking_h +z_corr)
         arc(square_basis*4 - marking_w/2,
             [x <= 4 ? 20 : 5, y <= 4 ? 70 : 85],
@@ -1633,13 +1654,13 @@ module openvlex_radial_marker_arc_negative(x,y,square_basis) {
     
     // 5x "marc"
     if (x > 4 && y > 4) {
-        translate([0,0,6-marking_h])
+        translate([0,0,h])
         linear_extrude(marking_h +z_corr)
         arc(square_basis*5 - marking_w/2,
             [x <= 5 ? 20 : 5, y <= 5 ? 70 : 85],
             marking_w, fn=100);
     } else if (x == 4 && y == 4 && shape == "square") {
-        translate([0,0,6-marking_h])
+        translate([0,0,h])
         linear_extrude(marking_h +z_corr)
         arc(square_basis*5 - marking_w/2,
             [40, 50],
@@ -1647,7 +1668,7 @@ module openvlex_radial_marker_arc_negative(x,y,square_basis) {
     }
 }
 
-module openvlex_radial_sockets_negative(x,y,square_basis) {
+module openvlex_radial_sockets_negative(x,y,square_basis, top=true) {
 
     function sagita(r, s) = r - sqrt (4*r*r - s*s) / 2;
 
@@ -1662,18 +1683,18 @@ module openvlex_radial_sockets_negative(x,y,square_basis) {
     // 1x inner circle
     rotate([0,0,45])
     translate([min_corner_dist, 0, 0])
-    openvlex_connector_socket();
+    openvlex_connector_socket(top);
 
     // 2x belt
     if (x > 1) {
         rotate([0,0,45/2])
         translate([square_basis + square_basis/2, 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
     }
     if (y > 1) {
         rotate([0,0,45/2+45])
         translate([square_basis + square_basis/2, 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
     }
 
     // 2x concave floor part
@@ -1685,81 +1706,89 @@ module openvlex_radial_sockets_negative(x,y,square_basis) {
         rotate([0,0,45])
 //        translate([square_basis*2 + jack_size/2 + sagita(square_basis*2, jack_size), 0, 0])
         translate([sqrt(2 * square_basis*2*square_basis*2) - min_corner_dist, 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
     }
 
     // 3x belt
     if (x > 2) {
         rotate([0,0,45/4])
         translate([square_basis*2 + square_basis/2, 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
 
         rotate([0,0,45/4 * 3])
         translate([square_basis*2 + square_basis/2, 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
     }
     if (y > 2) {
         rotate([0,0,45/4 * 5])
         translate([square_basis*2 + square_basis/2, 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
 
         rotate([0,0,45/4 * 7])
         translate([square_basis*2 + square_basis/2, 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
     }
 
     // 3x concave floor part
     if (x == 3 && y == 3 && shape == "square") {
         rotate([0,0,45])
         translate([sqrt(2 * square_basis*3*square_basis*3) - min_corner_dist, 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
     }
 
     // 4x belt
     if (x > 3) {
         rotate([0,0,45/4])
         translate([square_basis*3 + square_basis/2, 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
 
         rotate([0,0,45/4 * 3])
         translate([square_basis*3 + square_basis/2, 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
     }
     if (y > 3) {
         rotate([0,0,45/4 * 5])
         translate([square_basis*3 + square_basis/2, 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
 
         rotate([0,0,45/4 * 7])
         translate([square_basis*3 + square_basis/2, 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
     }
     
     // 4x concave floor part
     if (x == 4 && y == 4 && shape == "square") {
         rotate([0,0,45/24*19])
         translate([square_basis*4 + socket_size/2 + sagita(square_basis*4, socket_size), 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
 
         rotate([0,0,45])
         translate([sqrt(2 * square_basis*4*square_basis*4) - min_corner_dist, 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
 
         rotate([0,0,45/24*29])
         translate([square_basis*4 + socket_size/2 + sagita(square_basis*4, socket_size), 0, 0])
-        openvlex_connector_socket();
+        openvlex_connector_socket(top);
 
     }
 }
 
-module openvlex_sockets_negative(x,y,square_basis) {
+module openvlex_sockets_negative(x, y, square_basis, top=true) {
     if (ov_sockets == "square") {
-        openvlex_square_sockets_negative(x,y,square_basis);
+        openvlex_square_sockets_negative(x,y,square_basis, top);
     } else if (ov_sockets == "radial") {
         if (shape == "square") {
-            openvlex_radial_marker_arc_negative(x,y,square_basis);
+            openvlex_radial_marker_arc_negative(x,y,square_basis, top);
         }
-        openvlex_radial_sockets_negative(x,y,square_basis);
+        openvlex_radial_sockets_negative(x,y,square_basis, top);
+    }
+}
+
+module openvlex_bottom_sockets_negative(x,y,square_basis) {
+    if (ov_sockets == "square") {
+        openvlex_square_bottom_sockets_negative(x,y,square_basis);
+    } else if (ov_sockets == "radial") {
+        openvlex_radial_bottom_sockets_negative(x,y,square_basis);
     }
 }
 
@@ -1922,71 +1951,6 @@ module connector_negative_curved(x,y,square_basis,shape,edge_width,magnet_hole,l
 
 
 
-
-
-//
-//module ov_single_column_support() {
-//
-//    module support() {
-//        translate([0, 0, 1.2]) cube([2, 1, 4.6]);
-//        hull() {
-//            translate([0, 0,   1.4]) cube([2, 1,   2.1]);
-//            translate([0, -.2, 1.9]) cube([2, 1.4, 1.1]);
-//        }
-//        hull() {
-//            translate([0, 0,   3.5]) cube([2, 1,   2.1]);
-//            translate([0, -.2, 4.0]) cube([2, 1.4, 1.1]);
-//        }
-//    }
-//
-//    if (ov_additional_supports == "two") {
-//        
-//        // left
-//        translate([6.2, 1.1, 0]) support();
-//        
-//        // right
-//        translate([6.2, -2.1, 0]) support();
-//        
-//        
-//    } else if (ov_additional_supports == "three") {
-//        
-//        // left
-//        translate([6.4, 2, 0]) support();
-//        
-//        // right
-//        translate([6.4, -3, 0]) support();
-//
-//        // middle
-//        translate([7.4, -0.5, 0]) support();
-//
-//    }
-//    
-//}
-//
-//module ov_additional_column_supports(x,y,square_basis) {
-//    for ( i = [0 : y-1] ) {
-//        translate([0,square_basis*(i+1)-square_basis/2,0])
-//            ov_single_column_support();
-//        translate([square_basis*x,square_basis*(i+1)-square_basis/2,0])
-//            rotate([0,0,180]) ov_single_column_support();
-//    }
-//    for ( i = [0 : x-1] ) {
-//        translate([square_basis*(i+1)-square_basis/2,0,0])
-//            rotate([0,0,90]) of_single_column_support();
-//        translate([square_basis*(i+1)-square_basis/2,square_basis*y,0])
-//            rotate([0,0,-90]) of_single_column_support();
-//    }
-//}
-
-
-
-
-
-
-
-
-
-
 /*
  * Top Level Function
  */
@@ -2061,13 +2025,25 @@ if (ov_part == "sockets_only") {
 
     color("red") 
     openvlex_sockets_negative(x,y,square_basis_number);
+    
+//    if (ov_sockets == "radial") {
+//        // draw a block below for easier aligning with custom tiles:
+//        color("grey") 
+//        translate([0,0,-100.0])
+//            cube([x*square_basis_number,y*square_basis_number,0.01]);
+//    }
 
-    if (ov_sockets == "radial") {
-        // draw a block below for easier aligning with custom tiles:
-        color("grey") 
-        translate([0,0,-100.0])
-            cube([x*square_basis_number,y*square_basis_number,0.01]);
-    }
+} else if (ov_part == "bottom_sockets") {
+
+    color("orange")
+    openvlex_sockets_negative(x,y,square_basis_number, top=false);
+
+//    if (ov_sockets == "radial") {
+//        // draw a block below for easier aligning with custom tiles:
+//        color("grey") 
+//        translate([0,0,-100.0])
+//            cube([x*square_basis_number,y*square_basis_number,0.01]);
+//    }
     
 } else {
 
