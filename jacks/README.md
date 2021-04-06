@@ -63,3 +63,10 @@ The jacks are quite small parts, so the most important issue is the adhesion of 
 
 - Carefully remove the tile from the stencil. It may help to gently press and push the jacks together from underneath with flat-nose pliers. You can also use a flat screwdriver to carefully lift the tile - that's what the notches on the stencil are for.
 
+
+
+## Double Jacks
+
+Use double jacks to vertically clip together OpenVLex parts (risers and stairs) that have holes on the bottom side.
+
+![Double Jacks](./img/openvlex_double_jack_slicer.png)
