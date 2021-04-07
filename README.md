@@ -40,7 +40,7 @@ OpenVLex vertical locking can be used in many ways, but the most common use case
 
 - With a basic set of reusable bases in different sizes, you will never have to print a base again. **Save printing time and money**. And save plastic and rare earths (magnets). Save the planet! :earth_africa::earth_americas::earth_asia::nerd_face:
 
-- OpenVLex is a non-commercial **open source** solution that I created in my spare time. Feel **free to use** it. You don't have to buy me a coffee or a beer, instead, just be a nice person and help people in need :relaxed:.  
+- OpenVLex is a non-commercial **open source** solution that I created in my spare time. Feel **free to use** it. No need to buy me a coffee or a beer, instead, just be a nice person and help people in need :relaxed:.  
   And please share your experiences with OpenVLex and give me feedback!
 
 

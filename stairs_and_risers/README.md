@@ -10,23 +10,28 @@ OpenVLex stairs and risers can be stacked and combined in endless variations.
   ![Spiral Staircase](../img/img015.jpg)
   ![Tower Staircase](../img/img014.jpg)
 
-### Variants
-
-There are different height variants:
-
-- 1/3" stair parts
-- 1/2" risers/platforms
-- 1" risers/platforms
-- 1½" risers/platforms
-
-
-
 ## Instructions
 
-Print out the OpenVLex jacks and attach them to the bottom.
+### Height Variations
+
+OpenVLex stairs and risers are available in different heights:
+
+- 1/3" risers/stairs
+- 1/2" risers/stairs
+- 1" risers/stairs
+- 1½" risers/stairs
+- platforms to be used as top for risers/stairs
+
+### Clipping Variants
+
+- For parts **without holes** on the bottom side (1/3" risers and platforms): print out OpenVLex "glue jacks" and attach (i.e. glue) them to the bottom.
+
+  Hint: Use another part of the same shape as a gluing stencil.
+
+- For parts **with holes** on the bottom side: print out some OpenVLex double jacks and use them to clip parts together without gluing.
 
 
-### Printing Notes
+### Printing Notes for Stairs and Risers
 
 - Material: PLA or PETG
 - Nozzle: 0.4 mm

@@ -3,11 +3,19 @@
 
 ## About
 
+OpenVLex jacks are used to vertically clip parts together. One or both of the parts must have an OpenVLex socket hole were the jack snaps in. There are two ways of clipping parts together:
+
+1. Socket hole(s) on the lower part and jacks glued to the bottom surface of the upper part.
+
+2. Socket hole(s) on both the lower and the upper part and a double-jack that clips them together.
+
+
+
 OpenVLex jacks are glued to the underside of "wall on tile" floor or wall tiles. Attach one jack per inch grid field. There is a printable stencil that makes gluing much easier and faster. See [gluing instructions](#gluing-instructions) below.
 
-## Instructions
+## Instructions for Glue Jacks
 
-There are three slighty different variants of jacks:
+There are three slighty different variants of jacks for gluing to the bottom of parts:
 
 - **loose**  (5.9 mm)
 
