@@ -78,3 +78,16 @@ The jacks are quite small parts, so the most important issue is the adhesion of 
 Use double jacks to vertically clip together OpenVLex parts (risers and stairs) that have holes on the bottom side.
 
 ![Double Jacks](./img/openvlex_double_jack_slicer.png)
+
+### Printing Notes for OpenVLex Double Jacks
+
+- Material: PLA (PETG might work but not yet tested)
+
+- Nozzle: 0.4 mm
+
+- Layer height: 0.15 mm or 0.20 mm
+
+- Fill Density: 100% (actually should not matter)
+
+- Brim: yes - use if you have difficulties with first layer adhesion
+
