@@ -77,6 +77,11 @@ The jacks are quite small parts, so the most important issue is the adhesion of 
 
 Use double jacks to vertically clip together OpenVLex parts (risers and stairs) that have holes on the bottom side.
 
+There are two variants of the double jack:
+
+1. **"normal"** (green one in image below): can be used as **universal joint** for clipping together parts with both having OpenVLex socket holes.
+2. **"half strong"** (orange one in image below): can be used as a **permanent jack** that is clipped once and forever into bottom socket holes of stair/riser parts. Use the strong side of the jack (where the shorter cutting is) for permanent clipping it into a socket hole.
+
 ![Double Jacks](./img/openvlex_double_jack_slicer.png)
 
 ### Printing Notes for OpenVLex Double Jacks
