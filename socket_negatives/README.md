@@ -11,9 +11,9 @@ vertically stackable and clipping together with OpenVLex jacks.
 
 - use "bottom socket negatives" for the bottom of parts if you want to make them stackable with double jacks
 
-- use "square" negatives for square and rectangular parts
+- use "square/square" negatives for square and rectangular parts
 
-- use "radial" negatives for curved parts
+- use "curved/radial" negatives for curved parts
 
 ## Instructions
 
@@ -23,6 +23,5 @@ vertically stackable and clipping together with OpenVLex jacks.
 
 - horizontally center align connector negatives to the inch grid
 
-- for curved/radial sockets there are versions with a plate at z -100 mm which is meant to easier align the sockets
-  to your custom part
+- for curved/radial sockets there are versions with a plate at z -100 mm which is meant to easier align the sockets to your custom part
   

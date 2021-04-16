@@ -7,5 +7,6 @@ bases/_archive/*
 _old
 _test
 _out
+_raw
 *.blend
 *.blend1
