@@ -113,6 +113,7 @@ If you are either not yet convinced or already eager to learn more about the pos
 - Print out **walls, corners and doors** and use OpenVLex to combine them with floors to create different sized tiles or even whole rooms.  
   
   ![Walls](img/img005.jpg)  
+  ![Walls and Bases](img/img018.jpg)  
   ![Corners](img/img007.jpg)  
   ![Doors](img/img008.jpg)
 
