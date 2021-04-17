@@ -12,7 +12,7 @@ OpenVLex bases can be used as universal bases for all your "wall on tile" terrai
 OpenVLex currently supports three different locking variants:
 
 - magnetic.openlock
-- triplex (or triplex.braced with additional supports)
+- triplex (or triplex.braced with additional braces to support the upper surface)
 - dragonlock (early state - proof of concept)
 
    ![Locking Systems](plain/img/lock-systems.png)
