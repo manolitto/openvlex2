@@ -38,6 +38,8 @@ OpenVLex vertical locking can be used in many ways, but the most common use case
 
 - OpenVLex gives you **dynamic floors out of the box**: each 1x1 floor tile can immediately be used for mosaics, patterned floors or as a scatter.
 
+- With OpenVLex you can **re-use** your **wall-on-tile parts** (walls, floors, ...) on the **outside** of your dungeons or buildings without having ugly holes in the foundation.
+
 - With a basic set of reusable bases in different sizes, you will never have to print a base again. **Save printing time and money**. And save plastic and rare earths (magnets). Save the planet! :earth_africa::earth_americas::earth_asia::nerd_face:
 
 - OpenVLex is a non-commercial **open source** solution that I created in my spare time. Feel **free to use** it. No need to buy me a coffee or a beer, instead, just be a nice person and help people in need :relaxed:.  
