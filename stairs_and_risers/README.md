@@ -30,6 +30,7 @@ OpenVLex stairs and risers are available in different heights:
 
 - For parts **with holes** on the bottom side: print out some [OpenVLex double jacks](../jacks/) ("half strong" variant recommended) and use them to clip parts together without gluing.
 
+  ![Riser with Double Jacks](img/riser-with-double-jacks.png)
 
 ### Printing Notes for Stairs and Risers
 
