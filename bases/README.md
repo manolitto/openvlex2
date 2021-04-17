@@ -15,14 +15,21 @@ OpenVLex currently supports three different locking variants:
 - triplex (or triplex.braced with additional supports)
 - dragonlock (early state - proof of concept)
 
-### Geometry: square vs radial
+   ![Locking Systeme](plain/img/lock-systems.png)
 
-Most of the time you will need bases with "square" geometry. When it comes to **curved** floors, stairs, or risers you should switch to "radial" bases.
+### Geometry: square, curved and radial
 
+Most of the time you will need bases with "square" shape and "square" geometry. When it comes to **curved** floors, stairs, or risers you should switch to "radial" bases.
+
+   ![Base Geometry](plain/img/base-geometry.png)
+   ![Triplex Braces](plain/img/triplex-braces.png)
+   
 ### Style
 
-In addition to "plain" bases there are plans to add corner and edge bases in different styles. "Dungeon Stone" is the first supported OpenVLex base style. 
+In addition to "plain" bases there are plans to add corner and edge bases in different styles. "Dungeon Stone" is the first supported OpenVLex base style.
 
+   ![Dungeon Stone bases - 3D](dungeon_stone/img/img002.png)
+   ![Dungeon Stone bases - Sample](dungeon_stone/img/img001.jpg)
 
 ## Instructions
 
