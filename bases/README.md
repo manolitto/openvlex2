@@ -20,7 +20,7 @@ OpenVLex currently supports three different locking variants:
 
 ### Geometry: square, curved and radial
 
-Most of the time you will need bases with "square" shape and "square" geometry. When it comes to **curved** floors, stairs, or risers you should switch to "radial" bases.
+Most of the time you will need bases with "square" base area shape and "square" OpenVLex sockets geometry. When it comes to **curved** floors, stairs, or risers you will switch to "curved" base areas and "radial" sockets.
 
    ![Base Geometry](plain/img/base-geometry.png)
    
