@@ -20,7 +20,18 @@ OpenVLex stairs and risers are available in different heights:
 - 1/2" risers/stairs
 - 1" risers/stairs
 - 1½" risers/stairs
+
+  ![Riser Heights](img/riser-heights.png)
+
 - platforms to be used as top for risers/stairs
+
+  ![Platforms](img/platforms.png)
+
+- "riser bases" combine a riser and the base for the next level:
+  the compass direction in the file name describes where the locking sides are: NE means side locks north and east
+
+  ![Riser Base](img/riser-base.png)
+
 
 ### Clipping Variants
 
@@ -28,7 +39,7 @@ OpenVLex stairs and risers are available in different heights:
 
   Hint: Use another part of the same shape as a gluing stencil.
 
-- For parts **with holes on the bottom** side: print out some [OpenVLex double jacks](../jacks#openvlex-double-jacks) ("half strong" variant recommended) and use them to clip parts together **without gluing**.
+- For parts **with holes on the bottom** side ("openvlex.top\_and\_bottom"): print out some [OpenVLex double jacks](../jacks#openvlex-double-jacks) ("half strong" variant recommended) and use them to clip parts together **without gluing**.
 
   ![Riser with Double Jacks](img/riser-with-double-jacks.png)
 
