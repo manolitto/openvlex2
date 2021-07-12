@@ -35,7 +35,7 @@ OpenVLex stairs and risers are available in different heights:
 
 ### Clipping Variants
 
-- For parts **without holes on the bottom** side (1/3" risers and platforms): print out OpenVLex "glue jacks" and attach (i.e. glue) them to the bottom.
+- For parts **without holes on the bottom** side (1/3" risers and platforms): print out [OpenVLex glue jacks](../jacks#openvlex-glue-jacks) and attach (i.e. glue) them to the bottom.
 
   Hint: Use another part of the same shape as a gluing stencil.
 
