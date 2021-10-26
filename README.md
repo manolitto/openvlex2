@@ -102,11 +102,11 @@ To give you an idea of how OpenVLex works and the advantages it offers, you can 
 
 If you are either not yet convinced or already eager to learn more about the possibilities of OpenVLex, here are a few ideas and pointers:
 
-- Print **other floor styles** (Cut Stone, Rough Stone, Towne, ...) in the common sizes 1x1, 2x1 and 2x2. Apply OpenVLex jacks and use them with your existing bases in different sizes.  
+- Print **other floor styles** (Cut Stone, Rough Stone, Towne, ...) in the common sizes 1x1, 2x1 and 2x2. Apply OpenVLex jacks and use them with your new OpenVLex bases in different sizes.  
   
   ![Other floor styles](img/img012.jpg)
 
-- Print out some **[OpenVLex Magnetic bases](bases/plain/magnetic.openlock/)** (see [instructions](bases/README.md)) and use them as alternative bases for situations and scenes where you need more flexibility during play sessions.  
+- Print out some **[OpenVLex Magnetic bases](bases/plain/magnetic.openlock/)** (see [instructions](bases/README.md)) and use them as alternative (magnetic) bases for situations and scenes where you need more flexibility during play sessions.
      
   ![OpenVLex Magnetic bases](img/img006.jpg)
 
@@ -127,6 +127,8 @@ If you are either not yet convinced or already eager to learn more about the pos
   ![Tower Staircase](img/img014.jpg)
 
 - Print a bunch of 1x1 floor tiles of different styles (e.g. Dwarven Plain and Knotwork) and enjoy building **mosaics and patterned floor** tiles in endless variety.
+
+- Print terrain and building parts from other systems and vendors (like OpenLOCK, DRAGONLOCK, Tilescape, ...) and combine them all with your new flexible OpenVLex bases. See FAQs below for instructions about preparing such parts.
 
 - Build amazing dungeons and houses. Have fun! :star_struck:
 
@@ -149,6 +151,19 @@ If you are either not yet convinced or already eager to learn more about the pos
 **Q:** The jacks look fragile and I am sure I will manage to break one. I don't want to throw away painted tiles because of a broken jack!  
 
 **A:** Rest assured that you don't have to! Try to remove the broken jack with pliers and a carpet knife (:warning: Watch your fingers! :face_with_head_bandage:). If the joint is too strong, put the tile into the freezer for some while. This makes the superglue brittle. (Thanks, Devon Jones, for this valuable hint!)
+
+---
+
+**Q:** Can I use terrain and building tiles from other systems and vendors with OpenVLex?
+
+**A:** Yes, you can use whatever tile you want (as soon as it is based on some kind of modular grid system)! Simply cut away the bottom part of the tile (the part where the holes for the proprietary locking mechanism are). Most slicer applications already support cutting pieces horizontally, so you do not even need 3D software for this. Here are hints for some systems:
+
+  - OpenLOCK terrain tiles: cut away and drop 6 mm from bottom
+  - DRAGONLOCK:
+    - Most Tile Sets: drop bottom 5.28 mm
+    - Some Tile Sets: drop just 5.21 mm (the minimum DRAGONLOCK base height)
+    - Shadowgrove Forest: cutting away 6mm from bottom works quite well
+  - Tilescape: drop 6.4 mm from bottom of tiles with integrated frame, nothing to drop for frameless tiles
 
 ---
 
