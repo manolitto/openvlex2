@@ -241,6 +241,8 @@ module magnet_positive(magnet_hole=5.5) {
 module magnet_negative(magnet_hole=5.5) {
     if (magnet_hole > 0) {
         if (ov_sockets == "none") {
+            translate([1,-magnet_hole/2,1]) cube([magnet_hole/2,magnet_hole,8]);
+            translate([1,-0.9,-2]) cube([magnet_hole/2,1.8,10]);
             translate([magnet_hole/2+1,0,1]) cylinder(8,magnet_hole/2,magnet_hole/2, $fn=100);
             translate([magnet_hole/2+1,0,-2]) cylinder(10,.9,.9,$fn=50);
         } else {
@@ -1824,11 +1826,14 @@ module openvlex_magnet_negative() {
     hull() {
         // smaller top hole
         translate([magnet_hole/2+1,0, h_bottom+h_middle]) cylinder(h_top, 1.8, 1.8, $fn=30);
+        
         // main hole    
         translate([magnet_hole/2+1,0, h_bottom]) cylinder(h_middle, magnet_hole/2,magnet_hole/2, $fn=60);
+        translate([1, -magnet_hole/2, h_bottom]) cube([magnet_hole/2,magnet_hole,h_middle]);
     }
     // bottom tiny hole
     translate([magnet_hole/2+1,0,-0.1]) cylinder(h_bottom+0.2,.9,.9,$fn=30);
+    translate([1.5,-0.9,-0.1]) cube([magnet_hole/2-0.5,1.8,h_bottom+0.2]);
 }
 
 module openvlex_magnets_negative(x,y,square_basis) {

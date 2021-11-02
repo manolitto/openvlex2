@@ -35,62 +35,62 @@ do
  				  if [ $x -ge $y ] ; then
 
 					#
-					# triplex
+					# openlock+openvlex
 					#
-					mkdir -p _out/triplex.openvlex
-					$OPENSCAD -o _out/triplex.openvlex/base.$style.$s.$basis.${x}x${y}.triplex.openvlex.stl \
+					mkdir -p _out/openlock+openvlex
+					$OPENSCAD -o _out/openlock+openvlex/$style#base+$s.${x}x${y}.openlock+openvlex.stl \
 						-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
 						-D "shape=\"$s\"" \
 						-D "style=\"${style}\"" \
 						-D "topless=\"false\"" \
 						-D "lock=\"triplex\"" -D "magnet_hole=0" -D 'priority="lock"' \
-						-D "ov_feature=\"square\"" \
+						-D "ov_sockets=\"square\"" \
 						-D "ov_part=\"all\"" \
 						-D "ov_additional_stability_bars=\"false\"" \
 						bases.scad
 
 					#
-					# triplex braced
+					# openlock+openvlex,braced
 					#
-					mkdir -p _out/triplex.braced.openvlex
-					$OPENSCAD -o _out/triplex.braced.openvlex/base.$style.$s.$basis.${x}x${y}.triplex.braced.openvlex.stl \
+					mkdir -p _out/openlock+openvlex
+					$OPENSCAD -o _out/openlock+openvlex/$style#base+$s.${x}x${y}.openlock+openvlex,braced.stl \
 						-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
 						-D "shape=\"$s\"" \
 						-D "style=\"${style}\"" \
 						-D "topless=\"false\"" \
 						-D "lock=\"triplex\"" -D "magnet_hole=0" -D 'priority="lock"' \
-						-D "ov_feature=\"square\"" \
+						-D "ov_sockets=\"square\"" \
 						-D "ov_part=\"all\"" \
 						-D "ov_additional_stability_bars=\"true\"" \
 						bases.scad
 
 
 					#
-					# magnetic.openlock upper
+					# magnetic,openlock+openvlex,upper_part
 					#
-					mkdir -p _out/magnetic.openlock.openvlex
-					$OPENSCAD -o _out/magnetic.openlock.openvlex/base.$style.$s.$basis.${x}x${y}.magnetic.openlock.openvlex_upper.stl \
+					mkdir -p _out/openlock,magnetic+openvlex
+					$OPENSCAD -o _out/openlock,magnetic+openvlex/$style#base+$s.${x}x${y}.magnetic,openlock+openvlex,upper_part.stl \
 						-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
 						-D "shape=\"$s\"" \
 						-D "style=\"${style}\"" \
 						-D "topless=\"false\"" \
 						-D "lock=\"openlock\"" -D "magnet_hole=6" -D 'priority="magnets"' \
-						-D "ov_feature=\"square\"" \
+						-D "ov_sockets=\"square\"" \
 						-D "ov_part=\"upper\"" \
 						-D "ov_additional_stability_bars=\"false\"" \
 						bases.scad
 
 					#
-					# magnetic.openlock lower
+					# magnetic,openlock+openvlex,lower_part
 					#
-					mkdir -p _out/magnetic.openlock.openvlex
-					$OPENSCAD -o _out/magnetic.openlock.openvlex/base.$style.$s.$basis.${x}x${y}.magnetic.openlock.openvlex_lower.stl \
+					mkdir -p _out/openlock,magnetic+openvlex
+					$OPENSCAD -o _out/openlock,magnetic+openvlex/$style#base+$s.${x}x${y}.magnetic,openlock+openvlex,lower_part.stl \
 						-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
 						-D "shape=\"$s\"" \
 						-D "style=\"${style}\"" \
 						-D "topless=\"false\"" \
 						-D "lock=\"openlock\"" -D "magnet_hole=6" -D 'priority="magnets"' \
-						-D "ov_feature=\"square\"" \
+						-D "ov_sockets=\"square\"" \
 						-D "ov_part=\"lower\"" \
 						-D "ov_additional_stability_bars=\"false\"" \
 						bases.scad
@@ -98,62 +98,62 @@ do
 					if [ $x -eq $y ] && [ $x -gt 1 ] && [ $x -lt 5 ] ; then
 
 						#
-						# triplex radial
+						# openlock+openvlex,radial
 						#
-						mkdir -p _out/triplex.openvlex
-						$OPENSCAD -o _out/triplex.openvlex/base.$style.$s.$basis.${x}x${y}.triplex.radial.openvlex.stl \
+						mkdir -p _out/openlock+openvlex
+						$OPENSCAD -o _out/openlock+openvlex/$style#base+$s.${x}x${y}.openlock+openvlex,radial.stl \
 							-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
 							-D "shape=\"$s\"" \
 							-D "style=\"${style}\"" \
 							-D "topless=\"false\"" \
 							-D "lock=\"triplex\"" -D "magnet_hole=0" -D 'priority="lock"' \
-							-D "ov_feature=\"radial\"" \
+							-D "ov_sockets=\"radial\"" \
 							-D "ov_part=\"all\"" \
 							-D "ov_additional_stability_bars=\"false\"" \
 							bases.scad
 
 						#
-						# triplex braced radial
+						# openlock+openvlex,radial,braced
 						#
-						mkdir -p _out/triplex.braced.openvlex
-						$OPENSCAD -o _out/triplex.braced.openvlex/base.$style.$s.$basis.${x}x${y}.triplex.braced.radial.openvlex.stl \
+						mkdir -p _out/openlock+openvlex
+						$OPENSCAD -o _out/openlock+openvlex/$style#base+$s.${x}x${y}.openlock+openvlex,radial,braced.stl \
 							-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
 							-D "shape=\"$s\"" \
 							-D "style=\"${style}\"" \
 							-D "topless=\"false\"" \
 							-D "lock=\"triplex\"" -D "magnet_hole=0" -D 'priority="lock"' \
-							-D "ov_feature=\"radial\"" \
+							-D "ov_sockets=\"radial\"" \
 							-D "ov_part=\"all\"" \
 							-D "ov_additional_stability_bars=\"true\"" \
 							bases.scad
 
 
 						#
-						# magnetic.openlock upper radial
+						# magnetic.openlock+openvlex,radial,upper_part
 						#
-						mkdir -p _out/magnetic.openlock.openvlex
-						$OPENSCAD -o _out/magnetic.openlock.openvlex/base.$style.$s.$basis.${x}x${y}.magnetic.openlock.radial.openvlex_upper.stl \
+						mkdir -p _out/openlock,magnetic+openvlex
+						$OPENSCAD -o _out/openlock,magnetic+openvlex/$style#base+$s.${x}x${y}.magnetic.openlock+openvlex,radial,upper_part.stl \
 							-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
 							-D "shape=\"$s\"" \
 							-D "style=\"${style}\"" \
 							-D "topless=\"false\"" \
 							-D "lock=\"openlock\"" -D "magnet_hole=6" -D 'priority="magnets"' \
-							-D "ov_feature=\"radial\"" \
+							-D "ov_sockets=\"radial\"" \
 							-D "ov_part=\"upper\"" \
 							-D "ov_additional_stability_bars=\"false\"" \
 							bases.scad
 
 						#
-						# magnetic.openlock lower radial
+						# magnetic.openlock+openvlex,radial,lower_part
 						#
-						mkdir -p _out/magnetic.openlock.openvlex
-						$OPENSCAD -o _out/magnetic.openlock.openvlex/base.$style.$s.$basis.${x}x${y}.magnetic.openlock.radial.openvlex_lower.stl \
+						mkdir -p _out/openlock,magnetic+openvlex
+						$OPENSCAD -o _out/openlock,magnetic+openvlex/$style#base+$s.${x}x${y}.magnetic.openlock+openvlex,radial,lower_part.stl \
 							-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
 							-D "shape=\"$s\"" \
 							-D "style=\"${style}\"" \
 							-D "topless=\"false\"" \
 							-D "lock=\"openlock\"" -D "magnet_hole=6" -D 'priority="magnets"' \
-							-D "ov_feature=\"radial\"" \
+							-D "ov_sockets=\"radial\"" \
 							-D "ov_part=\"lower\"" \
 							-D "ov_additional_stability_bars=\"false\"" \
 							bases.scad
