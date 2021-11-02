@@ -9,7 +9,11 @@ Stencils for easier and more accurate gluing of OpenVLex jacks onto the undersid
 
    ![Gluing Stencil](../img/img002.jpg) 
 
+Consider using the new for easier separating the tile from the stencil after gluing:
 
+   ![Disassembly Tool](../disassembly_tool/img/openvlex-disassembly_tool-1.png)
+    
+	
 ## Instructions
 
 As a basic set, print one 1x1, one 2x1 and one 2x2 stencil. This should cover 90% of your OpenVLex tiles. Remember that the purpose of OpenVLex is to prevent the need for exotic tile sizes. However, you can use the attached OpenSCAD file  to generate a less common sized stencil.
