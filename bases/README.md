@@ -11,9 +11,9 @@ OpenVLex bases can be used as universal bases for all your "wall on tile" terrai
 
 OpenVLex currently supports three different locking variants:
 
-- magnetic.openlock
-- triplex (or triplex.braced with additional braces to support the upper surface)
-- dragonlock (early state - proof of concept)
+- "openlock,magnetic" - combination of single centered OpenLOCK holes and holes for magnetic spheres (or discs)
+- "openlock" (formerly known as "triplex") - with or without additional "braces" structure (see below)
+- "dragonlock" - early state / proof of concept
 
    ![Locking Systems](plain/img/lock-systems.png)
    ![Triplex Braces](plain/img/triplex-braces.png)
@@ -38,27 +38,27 @@ In addition to "plain" bases there are plans to add corner and edge bases in dif
 
 1. Print one lower part and one upper part of your chosen size.
 
-2. Turn the upper part over and insert 5 mm magnetic balls into the round holes of the upper part.
+2. Turn the upper part over and insert 5 mm magnetic balls (or similar magnetic discs) into the round holes of the upper part.
 
 3. Apply (super) glue, but be careful not to soil the magnetic balls.
 
 4. Apply it to the bottom part and press the parts together. I recommend using clamps.
 
 
-### Triplex Bases
+### OpenLOCK "Triplex" Bases
 
 Print and postprocess similar to OpenForge bases.
-Use flat-nose pliers to remove the supports. Be careful not to accidentally remove the OpenLOCK bars.
+Use flat-nose pliers to remove the supports. Be careful not to accidentally remove the OpenLOCK bars or braces structure.
 
 > **Note:** With cheap PLA and/or with some printers it may be necessary to use bases with additional supports. If you see ugly holes on the top, you can either try to adjust your printer configuration to improve bridging (different PLA, hotend temperature, bridging speed, 0.10 mm layer height) or use the bases with additional braces - see below.
 
 
-### Triplex Bases (braced)
+### OpenLOCK "Triplex" Bases with braces
 
-Alternative bases that can be used if you have difficulties with bridging and see holes on the surface of your triplex base.
+If your OpenLOCK "Triplex" Bases come out nicely then you may simply ignore this variant. However, if you see holes on the surface of your OpenVLex bases (which might happen with cheap PLA) then you can try these alternative bases with additional structure instead.
 
-> **Note:** These bases have additional tiny bars at the back wall of the triplex openings. They are not meant as
-> printing support, they are small enough to not interfere with the OpenLOCK clip, and you do **NOT** need to remove them.
+> **Note:** These bases have additional tiny bars at the back wall of the triplex openings. They are NOT meant as removable
+> printing support, they are small enough to not interfere with the OpenLOCK clip, and you do **NOT** need to **remove** them.
 
 
 ### Printing Notes
