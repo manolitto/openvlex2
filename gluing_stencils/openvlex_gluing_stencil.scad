@@ -210,5 +210,18 @@ basis = [
 ];
 square_basis_number = basis[keyLookup(basis, [square_basis])][1];
 
-color("Orange") base(x,y,square_basis_number);
+color("Orange") 
+    base(x,y,square_basis_number);
 
+//color("Orange") 
+//  difference() {
+//    base(x,y,square_basis_number);
+//    translate([
+//      square_basis_number-square_basis_number/4,
+//      square_basis_number-square_basis_number/4,
+//      -0.1])
+//    cube([
+//      (x-2)*square_basis_number+square_basis_number/2,
+//      (y-2)*square_basis_number+square_basis_number/2,
+//      20]);
+//  }
