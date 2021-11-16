@@ -38,22 +38,9 @@ In addition to "plain" bases there are plans to add corner and edge bases in dif
 
 There are two ways to enclose the magnetic balls inside the base: print with pause or glue two parts.
 
-#### Option 1: Magnetic OpenLOCK Bases - print with pause
+#### Option 1: Magnetic OpenLOCK Bases - upper and lower parts glued together
 
-1. Open the STL of the chosen size in your slicer (PrusaSlicer recommended).
-   
-   The files are named like this: <code>plain#base+square.[W]x[L].magnetic,openlock+openvlex.stl</code>
-   
-2. Add a pause print command M601 at layer height 5.7 mm:
-
-   ![Dungeon Stone bases - 3D](plain/img/pause-print.png)
-
-3. Start the print and when the print is paused, place the magnetic spheres inside the holes.
-4. Resume the print
-
-#### Option 2: Magnetic OpenLOCK Bases - upper and lower part glued together
-
-If you do not want to or cannot add a pause to your FDM prints you can simply print an upper and a lower part and glue them together after placing the magnets:
+If you are new to FDM printing or your slicer/printer does not support printing with a pause, follow this instructions for printing two parts that have to be glued together after inserting the magnets:
 
 1. Print one lower part and one upper part of your chosen size.
 
@@ -67,6 +54,25 @@ If you do not want to or cannot add a pause to your FDM prints you can simply pr
 
 4. Apply the bottom part and press the parts together. I recommend using clamps.
 
+
+#### Option 2: Magnetic OpenLOCK Bases - print with pause
+
+Important note: Please make sure that your FDM printer currently is equipped with a **brass nozzle**. Never try this with a steel nozzle - the magnets will get catched and you might damage your printer. Use at your own risk!
+
+I also recommend **testing** this first with a very **small 1x1 base** to make sure the pausing works as expected. Some printers have issues with pausing by G-Code, especially when used with remote controlling software like OctoPrint.
+
+1. Open the STL of the chosen size in your slicer (PrusaSlicer recommended).
+   
+   The files are named like this: <code>plain#base+square.[W]x[L].magnetic,openlock+openvlex.stl</code>
+   
+2. Add a pause print command at layer height 5.7 mm. Please google the exact method to achieve this with your slicer and printer!
+
+   When using PrusaSlicer with a Prusa MK3 printer this would be the M601 command:
+
+   ![Insert pause example with PrusaSlicer](plain/img/pause-print.png)
+
+3. Start the print and when the print is paused, place the magnetic spheres inside the holes.
+4. Resume the print
 
 ### OpenLOCK "Triplex" Bases
 
