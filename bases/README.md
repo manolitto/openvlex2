@@ -36,6 +36,22 @@ In addition to "plain" bases there are plans to add corner and edge bases in dif
 
 ### Magnetic OpenLOCK Bases
 
+There are two ways to enclose the magnetic balls inside the base: print with pause or glue two parts.
+
+#### Option 1: Magnetic OpenLOCK Bases - print with pause
+
+1. Open the STL of your chosen size in your slicer (PrusaSlicer recommended).
+2. Add a pause print command M601 at layer height 5.7 mm:
+
+   ![Dungeon Stone bases - 3D](plain/img/pause-print.png)
+
+3. Start the print and when the print is paused, place the magnetic spheres inside the holes.
+4. Resume the print
+
+#### Option 2: Magnetic OpenLOCK Bases - upper and lower part glued together
+
+If you do not want to or cannot add a pause to your FDM prints you can simply print an upper and a lower part and glue them together after placing the magnets:
+
 1. Print one lower part and one upper part of your chosen size.
 
 2. Turn the upper part over and insert 5 mm magnetic balls (or similar magnetic discs) into the round holes of the upper part.

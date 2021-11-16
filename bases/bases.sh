@@ -64,6 +64,20 @@ do
 						-D "ov_additional_stability_bars=\"true\"" \
 						bases.scad
 
+					#
+					# magnetic,openlock+openvlex
+					#
+					mkdir -p _out/openlock,magnetic+openvlex
+					$OPENSCAD -o _out/openlock,magnetic+openvlex/$style#base+$s.${x}x${y}.magnetic,openlock+openvlex.stl \
+						-D "x=${x}" -D "y=${y}" -D "square_basis=\"$basis\"" \
+						-D "shape=\"$s\"" \
+						-D "style=\"${style}\"" \
+						-D "topless=\"false\"" \
+						-D "lock=\"openlock\"" -D "magnet_hole=6" -D 'priority="magnets"' \
+						-D "ov_sockets=\"square\"" \
+						-D "ov_part=\"all\"" \
+						-D "ov_additional_stability_bars=\"false\"" \
+						bases.scad
 
 					#
 					# magnetic,openlock+openvlex,upper_part
