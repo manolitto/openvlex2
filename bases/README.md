@@ -40,7 +40,10 @@ There are two ways to enclose the magnetic balls inside the base: print with pau
 
 #### Option 1: Magnetic OpenLOCK Bases - print with pause
 
-1. Open the STL of your chosen size in your slicer (PrusaSlicer recommended).
+1. Open the STL of the chosen size in your slicer (PrusaSlicer recommended).
+   
+   The files are named like this: <code>plain#base+square.[W]x[L].magnetic,openlock+openvlex.stl</code>
+   
 2. Add a pause print command M601 at layer height 5.7 mm:
 
    ![Dungeon Stone bases - 3D](plain/img/pause-print.png)
@@ -54,11 +57,15 @@ If you do not want to or cannot add a pause to your FDM prints you can simply pr
 
 1. Print one lower part and one upper part of your chosen size.
 
+   The files are named like this:
+   - <code>plain#base+square.[W]x[L].magnetic,openlock+openvlex,lower_part</code>
+   - <code>plain#base+square.[W]x[L].magnetic,openlock+openvlex,upper_part</code>
+
 2. Turn the upper part over and insert 5 mm magnetic balls (or similar magnetic discs) into the round holes of the upper part.
 
 3. Apply (super) glue, but be careful not to soil the magnetic balls.
 
-4. Apply it to the bottom part and press the parts together. I recommend using clamps.
+4. Apply the bottom part and press the parts together. I recommend using clamps.
 
 
 ### OpenLOCK "Triplex" Bases
