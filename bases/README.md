@@ -45,8 +45,8 @@ If you are new to FDM printing or your slicer/printer does not support printing 
 1. Print one lower part and one upper part of your chosen size.
 
    The files are named like this:
-   - <code>plain#base+square.[W]x[L].magnetic,openlock+openvlex,lower_part</code>
-   - <code>plain#base+square.[W]x[L].magnetic,openlock+openvlex,upper_part</code>
+   - <code>plain#base+square.[W]x[L].magnetic,openlock,openvlex+lower_part</code>
+   - <code>plain#base+square.[W]x[L].magnetic,openlock,openvlex+upper_part</code>
 
 2. Turn the upper part over and insert 5 mm magnetic balls (or similar magnetic discs) into the round holes of the upper part.
 
@@ -63,7 +63,7 @@ I also recommend **testing** this first with a very **small 1x1 base** to make s
 
 1. Open the STL of the chosen size in your slicer (PrusaSlicer recommended).
    
-   The files are named like this: <code>plain#base+square.[W]x[L].magnetic,openlock+openvlex.stl</code>
+   The files are named like this: <code>plain#base+square.[W]x[L].magnetic,openlock,openvlex+single_part.stl</code>
    
 2. Add a pause print command at layer height 5.7 mm. Please google the exact method to achieve this with your slicer and printer!
 
