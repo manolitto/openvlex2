@@ -71,6 +71,8 @@ ov_sockets = "none"; // [none: Disable OpenVLex, square: Standard square grid Op
 /* [OpenVLex Magnetic Part] */
 // Which part to render for magnetic OpenVLex
 ov_part = "all"; // [all, upper, lower, sockets_only, bottom_sockets]
+// Cut out round "windows" on the side faces to increase the magnetic pull
+ov_magnet_window = "true"; // [true, false]
 
 /* [OpenVLex Additional Supports] */
 // Add additional supports? (Recommended for OpenVLex triplex)
@@ -1841,20 +1843,37 @@ module openvlex_magnet_negative() {
     translate([1.5,-0.9,-0.1]) cube([magnet_hole/2-0.5,1.8,h_bottom+0.2]);
 }
 
+/**
+ * 
+ **/
+module openvlex_magnet_wall_window() {
+    if (ov_magnet_window == "true") {
+        union() {
+            translate([-0.01,0,3]) rotate([0,90,0]) cylinder(0.40+0.02,1.6,1.6,$fn=30);
+            translate([ 0.40,0,3]) rotate([0,90,0]) cylinder(0.60+0.01,1.6,2.4,$fn=30);
+        }
+    }
+}
+
 module openvlex_magnets_negative(x,y,square_basis) {
   if (y > 1 || priority == "magnets") {
     for ( i = [0 : y-1] ) {
         translate([0,square_basis*(i+1)-square_basis/2,0]) openvlex_magnet_negative();
+        translate([0,square_basis*(i+1)-square_basis/2,0]) openvlex_magnet_wall_window();
         if (shape == "square") {
             translate([square_basis*x,square_basis*(i+1)-square_basis/2,0]) rotate([0,0,180]) openvlex_magnet_negative();
+            translate([square_basis*x,square_basis*(i+1)-square_basis/2,0]) rotate([0,0,180]) openvlex_magnet_wall_window();
         }
+        //translate([0,square_basis*(i+1)-square_basis/2,0]) openvlex_magnet_wall_window();
     }
   }
   if (x > 1 || priority == "magnets") {
     for ( i = [0 : x-1] ) {
         translate([square_basis*(i+1)-square_basis/2,0,0]) rotate([0,0,90]) openvlex_magnet_negative();
+        translate([square_basis*(i+1)-square_basis/2,0,0]) rotate([0,0,90]) openvlex_magnet_wall_window();
         if (shape == "square") {
             translate([square_basis*(i+1)-square_basis/2,square_basis*y,0]) rotate([0,0,-90]) openvlex_magnet_negative();
+            translate([square_basis*(i+1)-square_basis/2,square_basis*y,0]) rotate([0,0,-90]) openvlex_magnet_wall_window();
         }
     }
   }
@@ -2095,10 +2114,13 @@ if (ov_part == "sockets_only") {
     if(lock == "infinitylock" && !valid_infinitylock_basis) {
         echo("ERROR: infinitylock is only compatible with inch basis");
     } else {
-        color("Grey") base(x,y,square_basis_number,shape=shape,magnet_hole=magnet_hole,lock=lock,priority=priority,dynamic_floors=dynamic_floors);
+        /*color("Grey")*/
+        base(x,y,square_basis_number,shape=shape,magnet_hole=magnet_hole,lock=lock,priority=priority,dynamic_floors=dynamic_floors);
     }
     
 }
+
+
 
 
 //plain_base(x,y,square_basis_number,shape,7);

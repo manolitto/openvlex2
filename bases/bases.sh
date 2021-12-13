@@ -64,6 +64,7 @@ do
 						-D "ov_part=\"all\"" \
 						-D "ov_additional_stability_bars=\"false\"" \
 						-D "ov_material_saving=\"checker\"" \
+						-D "ov_magnet_window=\"true\"" \
 						bases.scad
 
 					#
@@ -80,6 +81,7 @@ do
 						-D "ov_part=\"upper\"" \
 						-D "ov_additional_stability_bars=\"false\"" \
 						-D "ov_material_saving=\"checker\"" \
+						-D "ov_magnet_window=\"true\"" \
 						bases.scad
 
 					#
@@ -96,6 +98,7 @@ do
 						-D "ov_part=\"lower\"" \
 						-D "ov_additional_stability_bars=\"false\"" \
 						-D "ov_material_saving=\"checker\"" \
+						-D "ov_magnet_window=\"true\"" \
 						bases.scad
 
 					if [ $x -gt 2 ] && [ $y -gt 2 ] ; then
@@ -130,6 +133,7 @@ do
 							-D "ov_part=\"all\"" \
 							-D "ov_additional_stability_bars=\"false\"" \
 							-D "ov_material_saving=\"whole_center\"" \
+							-D "ov_magnet_window=\"true\"" \
 							bases.scad
 
 						#
@@ -146,6 +150,7 @@ do
 							-D "ov_part=\"upper\"" \
 							-D "ov_additional_stability_bars=\"false\"" \
 							-D "ov_material_saving=\"whole_center\"" \
+							-D "ov_magnet_window=\"true\"" \
 							bases.scad
 
 						#
@@ -162,6 +167,7 @@ do
 							-D "ov_part=\"lower\"" \
 							-D "ov_additional_stability_bars=\"false\"" \
 							-D "ov_material_saving=\"whole_center\"" \
+							-D "ov_magnet_window=\"true\"" \
 							bases.scad
 					fi
 
@@ -180,6 +186,7 @@ do
 							-D "ov_sockets=\"radial\"" \
 							-D "ov_part=\"all\"" \
 							-D "ov_additional_stability_bars=\"true\"" \
+							-D "ov_magnet_window=\"true\"" \
 							bases.scad
 
 						#
@@ -195,6 +202,7 @@ do
 							-D "ov_sockets=\"radial\"" \
 							-D "ov_part=\"upper\"" \
 							-D "ov_additional_stability_bars=\"false\"" \
+							-D "ov_magnet_window=\"true\"" \
 							bases.scad
 
 						#
@@ -210,6 +218,7 @@ do
 							-D "ov_sockets=\"radial\"" \
 							-D "ov_part=\"lower\"" \
 							-D "ov_additional_stability_bars=\"false\"" \
+							-D "ov_magnet_window=\"true\"" \
 							bases.scad
 
 					fi
