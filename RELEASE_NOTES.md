@@ -1,7 +1,32 @@
-## OpenVLex 2.x.y_next
+## OpenVLex 2.4.0
 
+- new flexible riser system: stack risers of any height (platform, low, medium, high) by snapping together just a few simple parts. No need to print every different height in advance.
+
+  Find the new riser parts and instructions here: `stairs_and_risers/plain/README.md`
+
+- improved OpenVLex bases:
+	- new geometry with holes for saving material
+	- new vertical locking mechanism bars, ready for the new flexible riser system (see above)
+
+- improved magnetic OpenVLex bases: added round "windows" on the sides to make attraction of spheric magnets stronger
+
+- improved OpenVLex jacks: the new jack geometry now uses a flexible bridge for making the jack pins more durable and much less prone for breaking with brittle PLA
+
+## OpenVLex 2.3.1
+
+- revised the paused printing instructions and added a hint to only try this with brass nozzles
+
+## OpenVLex 2.3.0
+
+- added magnetic OpenVLex bases as single printable parts for printing with a pause and placing magnets directly on the printer (detailed instructions included)
+
+## OpenVLex 2.2.0
+
+- OpenVLex plain bases now have new magnet holes based on Devon Jones' new "flex" OpenForge bases to support both magnetic spheres and discs
+- naming of OpenVLex bases now follows Devon's new OpenForge naming scheme
+- added a new 4x4 gluing stencil
+- added a disassembly tool for easier separating tiles from there bases
 - dungeon stone risers with integrated base upper floor level
-
 
 ## OpenVLex 2.1.0
 
