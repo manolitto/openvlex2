@@ -10,7 +10,13 @@ OpenVLex stairs and risers can be stacked and combined in endless variations.
   ![Spiral Staircase](../img/img015.jpg)
   ![Tower Staircase](../img/img014.jpg)
 
-## Instructions
+## Instructions for the new OpenVLex Plain Riser Stacking System
+
+See separate [OpenVLex Plain Riser Stacking System instructions](plain/README.md)
+
+  ![Plain Riser System](img/plain-riser-system.png)
+
+## Instructions for textured risers and stairs
 
 ### Height Variations
 
