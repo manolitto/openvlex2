@@ -1,3 +1,7 @@
+## OpenVLex 2.x.y - next
+
+- reduced wall thickness of stackable plain riser parts
+
 ## OpenVLex 2.4.0
 
 - new flexible riser system: stack risers of any height (platform, low, medium, high) by snapping together just a few simple parts. No need to print every different height in advance.
