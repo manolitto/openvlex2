@@ -1,6 +1,9 @@
 ## OpenVLex 2.x.y - next
 
+## OpenVLex 2.4.1
+
 - reduced wall thickness of stackable plain riser parts
+- added some more stackable riser system compatible bases 
 
 ## OpenVLex 2.4.0
 

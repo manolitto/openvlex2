@@ -66,7 +66,7 @@ external_west = "false"; // [true, false]
 
 /* [OpenVLex Sockets] */
 // OpenVLex vertical locking sockets
-ov_sockets = "none"; // [none: Disable OpenVLex, square: Standard square grid OpenVLex, radial: Radial OpenVLex sockets]
+ov_sockets = "square"; // [none: Disable OpenVLex, square: Standard square grid OpenVLex, radial: Radial OpenVLex sockets]
  
 /* [OpenVLex Magnetic Part] */
 // Which part to render for magnetic OpenVLex
@@ -1558,6 +1558,7 @@ module openvlex_positive(x, y, square_basis,edge_width) {
       openvlex_magnet_shells_positive(x,y,square_basis);
     } else {
         if (ov_additional_stability_bars == "true") {
+            color("blue")
             openvlex_stability_bars_positive(x,y,square_basis);
         }
     }
@@ -1921,11 +1922,11 @@ module openvlex_square_negative(x,y,square_basis,edge_width) {
         openvlex_magnets_negative(x,y,square_basis) ;
     }
     
-    if (ov_part == "lower") {
-        openvlex_magnetic_lower_filter(x,y,square_basis);
-    } else if (ov_part == "upper") {
-        openvlex_magnetic_upper_filter(x,y,square_basis);
-    }
+    // if (ov_part == "lower") {
+    //     openvlex_magnetic_lower_filter(x,y,square_basis);
+    // } else if (ov_part == "upper") {
+    //     openvlex_magnetic_upper_filter(x,y,square_basis);
+    // }
     
 }
 
@@ -1996,15 +1997,160 @@ module material_saving_stripes(x,y,square_basis) {
 
 module material_saving_checker(x,y,square_basis) {
     oversize = 4;
+    cw = square_basis - 11 + 0.02; // 14.42
+    cl = square_basis - 11 + 0.02 + oversize * 2; // 22.42
+    ch = 10;
+    bulge = 0.4;
+    r = (4*bulge*bulge + 1.4*1.4)/(8*bulge);
     for ( i = [0 : x-2] ) {
         for ( j = [0 : y-2] ) {
-            translate([square_basis/2+5.5 + i*square_basis - 0.01, square_basis/2+5.5 + j*square_basis - 0.01 - oversize, -1])
-            cube([square_basis - 11 + 0.02, square_basis - 11 + 0.02 + oversize*2, 10]);
-            translate([square_basis/2+5.5 + i*square_basis - 0.01 - oversize, square_basis/2+5.5 + j*square_basis - 0.01, -1])
-            cube([square_basis - 11 + 0.02 + oversize*2, square_basis - 11 + 0.02, 10]);
+            union() {
+                translate([(i+1) * square_basis - cw/2, (j+1) * square_basis - cl/2, -1])
+                    cube([cw, cl, ch]);
+                translate([(i+1) * square_basis - cl/2, (j+1) * square_basis - cw/2, -1])
+                    cube([cl, cw, ch]);
+            }
         }
     }
 }
+
+module material_saving_lock_shaft(x,y,square_basis) {
+    cw = square_basis - 11 + 0.01;
+    cl = 3; //4;
+    ch = 10;
+    bar = 3;
+    if (x >= 2) {
+        for ( i = [1 : x-1] ) {
+            translate([i * square_basis - cw/2, square_basis/2 - bar/2 - cl, -1])
+                cube([cw, cl, ch]);
+            translate([i * square_basis - cw/2, (y-1)*square_basis + square_basis/2 + bar/2, -1])
+                cube([cw, cl, ch]);
+        }
+    }
+    if (y >= 2) {
+        for ( j = [1 : y-1] ) {
+            translate([square_basis/2 - bar/2 - cl, j*square_basis - cw/2, -1])
+                cube([cl, cw, ch]);
+            translate([(x-1)*square_basis + square_basis/2 + bar/2, j*square_basis - cw/2, -1])
+                cube([cl, cw, ch]);
+        }
+    }
+}
+
+module bulges(x,y,square_basis) {
+    oversize = 4;
+    cl = square_basis - 11 + 0.02 + oversize * 2; // 22.42
+    ch = 10;
+    bulge = 0.4;
+    r = 1.15; // (4*bulge*bulge + 1.4*1.4)/(8*bulge);
+    s = 2 * sqrt(2 * r * bulge - bulge*bulge);
+    h = square_basis - 11 - 0.01;
+    difference() {
+        union() {
+            if (x >= 2) {
+                for ( i = [1 : x-1] ) {
+                    for ( j = [1 : y] ) {
+                        if (j == 1 || j == y || ov_material_saving == "checker") {
+                            translate([i*square_basis, j*square_basis - cl/2 - r + bulge, s/2])
+                                rotate([0,90,0]) cylinder(h = h, r = r, center = true, $fn=60); 
+                            translate([i*square_basis, j*square_basis - cl/2 - r + bulge, 6-s/2])
+                                rotate([0,90,0]) cylinder(h = h, r = r, center = true, $fn=60); 
+                            translate([i*square_basis, (j-1)*square_basis + cl/2 + r - bulge, s/2])
+                                rotate([0,90,0]) cylinder(h = h, r = r, center = true, $fn=60); 
+                            translate([i*square_basis, (j-1)*square_basis + cl/2 + r - bulge, 6-s/2])
+                                rotate([0,90,0]) cylinder(h = h, r = r, center = true, $fn=60); 
+                        }
+                    }
+                }
+            }
+            if (y >= 2) {
+                for ( j = [1 : y-1] ) {
+                    for ( i = [1 : x] ) {
+                        if (i == 1 || i == x || ov_material_saving == "checker") {
+                            translate([i*square_basis - cl/2 - r + bulge, j*square_basis, s/2])
+                                rotate([90,0,0]) cylinder(h = h, r = r, center = true, $fn=60); 
+                            translate([i*square_basis - cl/2 - r + bulge, j*square_basis, 6-s/2])
+                                rotate([90,0,0]) cylinder(h = h, r = r, center = true, $fn=60); 
+                            translate([(i-1)*square_basis + cl/2 + r - bulge, j*square_basis, s/2])
+                                rotate([90,0,0]) cylinder(h = h, r = r, center = true, $fn=60); 
+                            translate([(i-1)*square_basis + cl/2 + r - bulge, j*square_basis, 6-s/2])
+                                rotate([90,0,0]) cylinder(h = h, r = r, center = true, $fn=60); 
+                        }
+                    }
+                }
+            }
+        };
+
+        // cut bottom
+        translate([0,0,-10]) cube([x*square_basis, y*square_basis, 10]);
+        // cut top
+        translate([0,0, 6]) cube([x*square_basis, y*square_basis, 10]);
+
+    }
+
+}
+
+
+module additional_support(x,y,square_basis) {
+    oversize = 4;
+    cl = square_basis - 11 + 0.02 + oversize * 2; // 22.42
+    ch = 10;
+    bulge = 0.4;
+    r = 1.15; // (4*bulge*bulge + 1.4*1.4)/(8*bulge);
+    s = 2 * sqrt(2 * r * bulge - bulge*bulge);
+    h = square_basis - 11 - 0.01;
+    union() {
+        if (x >= 2) {
+            for ( i = [1 : x-1] ) {
+                translate([i*square_basis - h/2 - 0.8 - 0.01, square_basis/2 - 2 + 0.01, 1.8 + 0.01])
+                    rotate([0,90,0])
+                    linear_extrude(0.8 + 0.01)
+                    polygon(points=[[0,0],[-3.6,0],[-3.6,-3]]);
+
+                translate([i*square_basis - h/2 - 0.01, (y-1) * square_basis + square_basis/2 + 2 - 0.01, 1.8 + 0.01])
+                    rotate([0,90,180])
+                    linear_extrude(0.8 + 0.01)
+                    polygon(points=[[0,0],[-3.6,0],[-3.6,-3]]);
+
+                translate([i*square_basis + h/2 + 0.01, square_basis/2 - 2 + 0.01, 1.8 + 0.01])
+                    rotate([0,90,0])
+                    linear_extrude(0.8 + 0.01)
+                    polygon(points=[[0,0],[-3.6,0],[-3.6,-3]]);
+
+                translate([i*square_basis + h/2 + 0.8 + 0.01, (y-1) * square_basis + square_basis/2 + 2 - 0.01, 1.8 + 0.01])
+                    rotate([0,90,180])
+                    linear_extrude(0.8 + 0.01)
+                    polygon(points=[[0,0],[-3.6,0],[-3.6,-3]]);
+            }
+        }
+        if (y >= 2) {
+            for ( j = [1 : y-1] ) {
+                translate([square_basis/2 - 2 + 0.01, j*square_basis - h/2 - 0.01, 1.8 + 0.01])
+                    rotate([0,90,270])
+                    linear_extrude(0.8 + 0.01)
+                    polygon(points=[[0,0],[-3.6,0],[-3.6,-3]]);
+
+                translate([(x-1) * square_basis + square_basis/2 + 2 - 0.01, j*square_basis - h/2 - 0.8 - 0.01, 1.8 + 0.01])
+                    rotate([0,90,90])
+                    linear_extrude(0.8 + 0.01)
+                    polygon(points=[[0,0],[-3.6,0],[-3.6,-3]]);
+
+                translate([square_basis/2 - 2 + 0.01, j*square_basis + h/2 + 0.8 + 0.01, 1.8 + 0.01])
+                    rotate([0,90,270])
+                    linear_extrude(0.8 + 0.01)
+                    polygon(points=[[0,0],[-3.6,0],[-3.6,-3]]);
+
+                translate([(x-1) * square_basis + square_basis/2 + 2 - 0.01, j*square_basis + h/2 + 0.01, 1.8 + 0.01])
+                    rotate([0,90,90])
+                    linear_extrude(0.8 + 0.01)
+                    polygon(points=[[0,0],[-3.6,0],[-3.6,-3]]);
+            }
+        }
+    };
+
+}
+
+
 
 /*
  * Top Level Function
@@ -2014,52 +2160,74 @@ module base(x,y,square_basis,
     df = dynamic_floors == "true" ? true : false;
     edge_width = magnet_hole >= 5.55 ? magnet_hole + 1 : 6.55;
 
-
     difference() {
         union() {
             difference() {
-                
                 union() {
-                    plain_base(x,y,square_basis,lock,shape,edge_width);
-                    if(df) {
-                        df_positive(x,y,square_basis,shape,edge_width);
+                    difference() {
+                        
+                        union() {
+                            plain_base(x,y,square_basis,lock,shape,edge_width);
+                            if(df) {
+                                df_positive(x,y,square_basis,shape,edge_width);
+                            }
+                            connector_positive(x,y,square_basis,shape,edge_width,magnet_hole,lock,priority) ;
+                            if (shape == "curved") {
+                                connector_positive_curved(x,y,square_basis,shape,edge_width,magnet_hole,lock,priority);
+                            }
+                        }
+                        
+                        if(df) {
+                            df_negative(x,y,square_basis, shape, edge_width);
+                        }
+                        connector_negative(x,y,square_basis,shape,edge_width,magnet_hole,lock,priority);
+                        if (shape == "curved") {
+                            connector_negative_curved(x,y,square_basis,shape,edge_width,magnet_hole,lock,priority);
+                        }
                     }
-                    connector_positive(x,y,square_basis,shape,edge_width,magnet_hole,lock,priority) ;
-                    if (shape == "curved") {
-                        connector_positive_curved(x,y,square_basis,shape,edge_width,magnet_hole,lock,priority);
+
+                    if (ov_sockets != "none") {
+                        openvlex_positive(x,y,square_basis,edge_width);
+                    }
+                }
+
+                if (ov_sockets != "none") {
+                    openvlex_negative(x,y,square_basis,edge_width);
+                }
+
+                if (x >= 2 && y >= 2) {
+                    if (ov_material_saving == "whole_center") {
+                        material_saving_checker(x, y, square_basis);
+                        material_saving_whole_center(x, y, square_basis);
+                    } else if (ov_material_saving == "checker") {
+                        material_saving_checker(x, y, square_basis);
                     }
                 }
                 
-                if(df) {
-                    df_negative(x,y,square_basis, shape, edge_width);
+                if (ov_material_saving == "checker" || ov_material_saving == "whole_center") {
+                    material_saving_lock_shaft(x, y, square_basis);
                 }
-                connector_negative(x,y,square_basis,shape,edge_width,magnet_hole,lock,priority);
-                if (shape == "curved") {
-                    connector_negative_curved(x,y,square_basis,shape,edge_width,magnet_hole,lock,priority);
+            };
+
+            if (x >= 1 && y >= 1) {
+                if (ov_material_saving == "checker" || ov_material_saving == "whole_center") {
+                    bulges(x, y, square_basis);
                 }
             }
 
-            if (ov_sockets != "none") {
-                openvlex_positive(x,y,square_basis,edge_width);
+            if (ov_material_saving == "checker" || ov_material_saving == "whole_center") {
+                additional_support(x, y, square_basis); // this one is necessary for bridging the additional lock shaft top hole on the side
             }
+        };
+
+        if (ov_part == "lower") {
+            openvlex_magnetic_lower_filter(x,y,square_basis);
+        } else if (ov_part == "upper") {
+            openvlex_magnetic_upper_filter(x,y,square_basis);
         }
 
-        if (ov_sockets != "none") {
-            openvlex_negative(x,y,square_basis,edge_width);
-        }
-
-        if (x >= 2 && y >= 2) {
-            if (ov_material_saving == "whole_center") {
-                material_saving_checker(x, y, square_basis);
-                material_saving_whole_center(x, y, square_basis);
-            } else if (ov_material_saving == "checker") {
-                material_saving_checker(x, y, square_basis);
-            }
-        }
-        
     }
 
-    
 }
 
 function keyLookup (data, key) = search(key, data, num_returns_per_match=1)[0];
@@ -2119,8 +2287,5 @@ if (ov_part == "sockets_only") {
     }
     
 }
-
-
-
 
 //plain_base(x,y,square_basis_number,shape,7);
