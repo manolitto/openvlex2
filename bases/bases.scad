@@ -2193,30 +2193,35 @@ module base(x,y,square_basis,
 
                 if (ov_sockets != "none") {
                     openvlex_negative(x,y,square_basis,edge_width);
-                }
 
-                if (x >= 2 && y >= 2) {
-                    if (ov_material_saving == "whole_center") {
-                        material_saving_checker(x, y, square_basis);
-                        material_saving_whole_center(x, y, square_basis);
-                    } else if (ov_material_saving == "checker") {
-                        material_saving_checker(x, y, square_basis);
+                    if (x >= 2 && y >= 2) {
+                        if (ov_material_saving == "whole_center") {
+                            material_saving_checker(x, y, square_basis);
+                            material_saving_whole_center(x, y, square_basis);
+                        } else if (ov_material_saving == "checker") {
+                            material_saving_checker(x, y, square_basis);
+                        }
+                    }
+                    
+                    if (ov_material_saving == "checker" || ov_material_saving == "whole_center") {
+                        material_saving_lock_shaft(x, y, square_basis);
                     }
                 }
-                
-                if (ov_material_saving == "checker" || ov_material_saving == "whole_center") {
-                    material_saving_lock_shaft(x, y, square_basis);
-                }
+
+        openvlex_magnets_negative(x,y,square_basis) ;
+
             };
 
-            if (x >= 1 && y >= 1) {
-                if (ov_material_saving == "checker" || ov_material_saving == "whole_center") {
-                    bulges(x, y, square_basis);
+            if (ov_sockets != "none") {
+                if (x >= 1 && y >= 1) {
+                    if (ov_material_saving == "checker" || ov_material_saving == "whole_center") {
+                        bulges(x, y, square_basis);
+                    }
                 }
-            }
 
-            if (ov_material_saving == "checker" || ov_material_saving == "whole_center") {
-                additional_support(x, y, square_basis); // this one is necessary for bridging the additional lock shaft top hole on the side
+                if (ov_material_saving == "checker" || ov_material_saving == "whole_center") {
+                    additional_support(x, y, square_basis); // this one is necessary for bridging the additional lock shaft top hole on the side
+                }
             }
         };
 
