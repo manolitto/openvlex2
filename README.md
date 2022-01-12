@@ -4,7 +4,7 @@
 <p align="center">
   <a href="#about">About</a> •
   <a href="#download">Download</a> •
-  <a href="#how-it-works">How it works</a> •
+  <a href="#getting-started">Getting Started</a> •
   <a href="#faqs">FAQs</a> •
   <a href="#credits">Credits</a> •
   <a href="#license">License</a>
@@ -40,6 +40,8 @@ OpenVLex vertical locking can be used in many ways, but the most common use case
 
 - With OpenVLex you can **re-use** your **wall-on-tile parts** (walls, floors, ...) on the **outside** of your dungeons or buildings without having ugly holes in the foundation.
 
+- OpenVLex allows you to flexibly exchange the base of **"separate wall"** parts and make an **interior 1/2 inch** wide interior wall out of an exterior wall. This wall can be locked by using special 1/2 inch "through hole" clips.
+
 - With a basic set of reusable bases in different sizes, you will never have to print a base again. **Save printing time and money**. And save plastic and rare earths (magnets). Save the planet! :earth_africa::earth_americas::earth_asia::nerd_face:
 
 - OpenVLex is a non-commercial **open source** solution that I created in my spare time. Feel **free to use** it. No need to buy me a coffee or a beer, instead, just be a nice person and help people in need :relaxed:.  
@@ -53,7 +55,7 @@ You can find the latest release [here](https://github.com/manolitto/openvlex2/re
 
 
 
-## How it works
+## Getting started
 
 To give you an idea of how OpenVLex works and the advantages it offers, you can follow this guide:
 
@@ -110,7 +112,7 @@ If you are either not yet convinced or already eager to learn more about the pos
      
   ![OpenVLex Magnetic bases](img/img006.jpg)
 
-- Print out **walls, corners and doors** and use OpenVLex to combine them with floors to create different sized tiles or even whole rooms.  
+- Print out "wall on tile" **walls, corners and doors** and use OpenVLex to combine them with floors to create different sized tiles or even whole rooms.  
   
   ![Walls](img/img005.jpg)  
   ![Walls and Bases](img/img018.jpg)  
@@ -125,6 +127,8 @@ If you are either not yet convinced or already eager to learn more about the pos
   
   ![Spiral Staircase](img/img015.jpg)
   ![Tower Staircase](img/img014.jpg)
+
+- Print a type "A" separate wall and use it either as an exterior wall with a textured base or as an interior wall by using the special [1/2 inch OpenVLex base](bases/separate_wall/).
 
 - Print a bunch of 1x1 floor tiles of different styles (e.g. Dwarven Plain and Knotwork) and enjoy building **mosaics and patterned floor** tiles in endless variety.
 
