@@ -1,4 +1,4 @@
-# OpenVLex 2 Seperate Wall Bases
+# OpenVLex 2 Separate Wall Bases
 
 
 ## Story
