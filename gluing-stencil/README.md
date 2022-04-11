@@ -30,6 +30,8 @@ As a basic set, print one 1x1, one 2x1 and one 2x2 stencil. This should cover 90
 
 ### 4. Use clamps until glue is dry (but not too long)
 
+   > **Note:** Keeping the parts upside down during drying prevents glue from dripping onto the stencil
+
    ![Gluing Stencil - Use clamps](./img/gluing-stencil_5.jpg) 
 
 ### 5. Place stencil on [disassembly plate](../disassembly-tool/README.md) and push down corners
