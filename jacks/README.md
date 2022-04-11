@@ -1,4 +1,4 @@
-# OpenVLex Jacks (v2.5.8)
+# OpenVLex Jacks
 
 
 ## About

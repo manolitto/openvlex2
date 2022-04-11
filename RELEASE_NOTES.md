@@ -1,4 +1,8 @@
-## OpenVLex 2.x.y - next
+## OpenVLex 2.5.0
+
+- new improved OpenVLex jacks which now look like "teeth" and can be printed sideways to be much stronger
+- improved gluing stencils
+- additional plain risers
 
 ## OpenVLex 2.4.1
 

@@ -1,4 +1,4 @@
-# OpenVLex Gluing Stencils (v2.5.14)
+# OpenVLex Gluing Stencils
 
 
 

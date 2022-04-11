@@ -1,4 +1,4 @@
-# OpenVLex Disassembly Tool (v2.5.2)
+# OpenVLex Disassembly Tool
 
 
 
