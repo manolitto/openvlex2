@@ -16,7 +16,6 @@ OpenVLex currently supports three different locking variants:
 - "dragonlock" - early state / proof of concept
 
    ![Locking Systems](plain/img/lock-systems.png)
-   ![Triplex Braces](plain/img/triplex-braces.png)
 
 ### Geometry: square, curved and radial
 
@@ -40,7 +39,7 @@ There are two ways to enclose the magnetic balls inside the base: print with pau
 
 #### Option 1: Magnetic OpenLOCK Bases - upper and lower parts glued together
 
-If you are new to FDM printing or your slicer/printer does not support printing with a pause, follow this instructions for printing two parts that have to be glued together after inserting the magnets:
+If you are new to FDM printing or your slicer/printer does not support printing with a pause, follow these instructions for printing two parts that have to be glued together after inserting the magnets:
 
 1. Print one lower part and one upper part of your chosen size.
 
@@ -74,23 +73,14 @@ I also recommend **testing** this first with a very **small 1x1 base** to make s
 3. Start the print and when the print is paused, place the magnetic spheres inside the holes.
 4. Resume the print
 
-### OpenLOCK "Triplex" Bases
-
-Print and postprocess similar to OpenForge bases.
-Use flat-nose pliers to remove the supports. Be careful not to accidentally remove the OpenLOCK bars or braces structure.
-
-> **Note:** With cheap PLA and/or with some printers it may be necessary to use bases with additional supports. If you see ugly holes on the top, you can either try to adjust your printer configuration to improve bridging (different PLA, hotend temperature, bridging speed, 0.10 mm layer height) or use the bases with additional braces - see below.
-
-
-### OpenLOCK "Triplex" Bases with braces
-
-If your OpenLOCK "Triplex" Bases come out nicely then you may simply ignore this variant. However, if you see holes on the surface of your OpenVLex bases (which might happen with cheap PLA) then you can try these alternative bases with additional structure instead.
+### OpenLOCK "Triplex" Bases have additional braces
 
 > **Note:** These bases have additional tiny bars at the back wall of the triplex openings. They are NOT meant as removable
 > printing support, they are small enough to not interfere with the OpenLOCK clip, and you do **NOT** need to **remove** them.
 
+   ![Triplex Braces](plain/img/triplex-braces.png)
 
-### Printing Notes
+## Printing Notes
 
 - Material: PLA or PETG
 - Nozzle: 0.4 mm
