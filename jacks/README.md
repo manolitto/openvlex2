@@ -20,7 +20,7 @@ OpenVLex jacks are glued to the underside of "wall on tile" floor/wall tiles or 
 
 ### Gluing Instructions
 
-- The recommended way to glue OpenVLex jacks to your tiles is to use one of the [gluing stencils](../gluing_stencils/README.md). However, for just trying out and testing OpenVLex you do not need a stencil yet, just use an already printed OpenVLex base as a stencil.  
+- The recommended way to glue OpenVLex jacks to your tiles is to use one of the [gluing stencils](../gluing-stencil/README.md). However, for just trying out and testing OpenVLex you do not need a stencil yet, just use an already printed OpenVLex base as a stencil.  
   
   ![Glue jacks to floor parts](../gluing-stencil/img/gluing-stencil_1.jpg)
 
