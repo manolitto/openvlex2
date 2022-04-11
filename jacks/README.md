@@ -42,7 +42,7 @@ OpenVLex jacks are glued to the underside of "wall on tile" floor/wall tiles or 
 
 - Carefully remove the tile from the stencil. You can also use a flat screwdriver to carefully lift the tile or push the jacks through from the underside.
 
-- You may also consider using the [disassembly tool](../disassembly_tool/README.md) for easily removing the tile from the stencil.
+- You may also consider using the [disassembly tool](../disassembly-tool/README.md) for easily removing the tile from the stencil.
 
   ![Glue jacks to floor parts](../gluing-stencil/img/gluing-stencil_7.jpg)
 

@@ -155,7 +155,7 @@ If you are either not yet convinced or already eager to learn more about the pos
 
 **A:** If using your fingernails :nail_care: is not an option :grimacing:, use flat-nose pliers to press the jacks together from the underside and carefully push them through. Or use a flat screwdriver to carefully and gradually spread the two parts apart from all four sides.
 
-**New**: You may also consider using the new [disassembly tool](disassembly_tool/)!
+**New**: You may also consider using the new [disassembly tool](disassembly-tool/)!
 
 ---
 
