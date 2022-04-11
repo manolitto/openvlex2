@@ -73,13 +73,14 @@ To give you an idea of how OpenVLex works and the advantages it offers, you can 
 4. Print fourteen **[OpenVLex jacks](jacks/)**. See [jack printing details and hints](jacks/README.md).  
    > **Printing time:** < 40 mins
    
-   ![OpenVLex jacks](img/img013.jpg)
+   ![OpenVLex jacks](./jacks/img/openvlex_14_jacks.png)
 
 5. Glue the jacks to the floor parts. See [jack gluing instructions](jacks/README.md#gluing-instructions).  
    > **Note:** You only need thirteen jacks, one is a spare
    
-   ![Glue jacks to floor parts](img/img002.jpg)  
-   ![Finished floor parts](img/img003.jpg)
+   ![Glue jacks to floor parts](./gluing-stencil/img/gluing-stencil_2.jpg)  
+   ![Glue jacks to floor parts](./gluing-stencil/img/gluing-stencil_3.jpg)  
+   ![Glue jacks to floor parts](./gluing-stencil/img/gluing-stencil_7.jpg)  
 
 6. Print out some **[OpenVLex Triplex bases](bases/plain/triplex/)** in the sizes you want. For now, print only one of each of your preferred sizes from the following list: 1x1, 2x1, 2x2, 3x2, 3x3, 4x1, 4x2, 4x3, 5x1, 5x2, 6x1, 6x2, 7x1, 8x1.  
    See [printing instructions for bases](bases/README.md).  
