@@ -15,12 +15,14 @@ OpenVLex jacks are used to vertically clip parts together. One or both of the pa
 OpenVLex jacks are glued to the underside of "wall on tile" floor/wall tiles or risers (those without holes on the bottom side). Attach one jack per inch grid field. There is a printable stencil that makes gluing much easier and faster - see [gluing instructions](#gluing-instructions) below.
 
 ![OpenVLex Jacks](./img/openvlex_jacks.png)
+![OpenVLex Jacks](./img/jacks_on_print_plate.jpg)
+![OpenVLex Jacks](./img/jacks_in_box.jpg)
 
 ### Gluing Instructions
 
 - The recommended way to glue OpenVLex jacks to your tiles is to use one of the [gluing stencils](../gluing_stencils/README.md). However, for just trying out and testing OpenVLex you do not need a stencil yet, just use an already printed OpenVLex base as a stencil.  
   
-  ![Glue jacks to floor parts](../img/img002.jpg)
+  ![Glue jacks to floor parts](../gluing-stencil/img/gluing-stencil_1.jpg)
 
 - Align the jacks of one tile so that they all have the same direction. This makes it easier to unplug the upper part later.
 
@@ -28,18 +30,27 @@ OpenVLex jacks are glued to the underside of "wall on tile" floor/wall tiles or 
 
 - Use **superglue**, which allows the tile to be used immediately after a few minutes. And in case a jack breaks one day it's easy to remove and replace it: put the tile into your freezer for a while and remove it with a carpet knife.
 
-- Use clamps to press the pieces firmly together until the glue is strong enough.
+  ![Glue jacks to floor parts](../gluing-stencil/img/gluing-stencil_2.jpg)
+  ![Glue jacks to floor parts](../gluing-stencil/img/gluing-stencil_3.jpg)
+  ![Glue jacks to floor parts](../gluing-stencil/img/gluing-stencil_4.jpg)
 
-- Carefully remove the tile from the stencil. It may help to gently press and push the jacks together from underneath with flat-nose pliers. You can also use a flat screwdriver to carefully lift the tile - that's what the notches on the stencil are for.
+- Use clamps to press the pieces firmly together until the glue is dry and strong enough.
+
+   > **Note:** Keeping the parts upside down during drying prevents glue from dripping onto the stencil
+
+  ![Glue jacks to floor parts](../gluing-stencil/img/gluing-stencil_5.jpg)
+
+- Carefully remove the tile from the stencil. You can also use a flat screwdriver to carefully lift the tile or push the jacks through from the underside.
 
 - You may also consider using the [disassembly tool](../disassembly_tool/README.md) for easily removing the tile from the stencil.
 
+  ![Glue jacks to floor parts](../gluing-stencil/img/gluing-stencil_7.jpg)
 
 ## OpenVLex Double Jacks
 
 Use double jacks to vertically clip together OpenVLex parts (risers and stairs) that have holes on the bottom side.
 
-![Double Jacks](./img/openvlex_double_jack_slicer.png)
+![Double Jacks](./img/openvlex_jacks.png)
 
 
 ## Printing Notes for OpenVLex Glue Jacks
